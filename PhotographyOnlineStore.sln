@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotographyOnlineStore.WebUI", "PhotographyOnlineStore.WebUI\PhotographyOnlineStore.WebUI.csproj", "{656CAFA3-CFD4-4EFB-A9D7-6BCFE563F303}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotographyOnlineStore.DataAccess.InMemory", "PhotographyOnlineStore.DataAccess.InMemory\PhotographyOnlineStore.DataAccess.InMemory.csproj", "{4FC871DF-AE0F-4E71-AE45-8D5AD2E32538}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotographyOnlineStore.DataAccess.SQL", "PhotographyOnlineStore.DataAccess.SQL\PhotographyOnlineStore.DataAccess.SQL.csproj", "{122DF5CF-EEFD-45EE-88F0-8DD03FC8476D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotographyOnlineStore.Services", "PhotographyOnlineStore.Services\PhotographyOnlineStore.Services.csproj", "{DE9E053A-AAE4-4D32-940A-53ACFAFB4063}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotographyOnlineStore.Core", "PhotographyOnlineStore.Core\PhotographyOnlineStore.Core.csproj", "{1D526108-EA9E-4138-98A5-9DBA48A3554D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotographyOnlineStore.Core", "PhotographyOnlineStore.Core\PhotographyOnlineStore.Core.csproj", "{ED78890F-388C-4160-9177-F57CA0C3823E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotographyOnlineStore.WebUI", "PhotographyOnlineStore.WebUI\PhotographyOnlineStore.WebUI.csproj", "{F58E6C8C-EEFE-464B-B7F2-B23A0CBC858F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{656CAFA3-CFD4-4EFB-A9D7-6BCFE563F303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{656CAFA3-CFD4-4EFB-A9D7-6BCFE563F303}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{656CAFA3-CFD4-4EFB-A9D7-6BCFE563F303}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{656CAFA3-CFD4-4EFB-A9D7-6BCFE563F303}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4FC871DF-AE0F-4E71-AE45-8D5AD2E32538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4FC871DF-AE0F-4E71-AE45-8D5AD2E32538}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FC871DF-AE0F-4E71-AE45-8D5AD2E32538}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,10 +31,14 @@ Global
 		{DE9E053A-AAE4-4D32-940A-53ACFAFB4063}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE9E053A-AAE4-4D32-940A-53ACFAFB4063}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE9E053A-AAE4-4D32-940A-53ACFAFB4063}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1D526108-EA9E-4138-98A5-9DBA48A3554D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1D526108-EA9E-4138-98A5-9DBA48A3554D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1D526108-EA9E-4138-98A5-9DBA48A3554D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1D526108-EA9E-4138-98A5-9DBA48A3554D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED78890F-388C-4160-9177-F57CA0C3823E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED78890F-388C-4160-9177-F57CA0C3823E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED78890F-388C-4160-9177-F57CA0C3823E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED78890F-388C-4160-9177-F57CA0C3823E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F58E6C8C-EEFE-464B-B7F2-B23A0CBC858F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F58E6C8C-EEFE-464B-B7F2-B23A0CBC858F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F58E6C8C-EEFE-464B-B7F2-B23A0CBC858F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F58E6C8C-EEFE-464B-B7F2-B23A0CBC858F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
