@@ -12,10 +12,10 @@ namespace PhotographyOnlineStore.DataAccess.SQL
     {
         public DataContext() : base("DefaultConnection")
         {
-        }
 
+        }
         public DbSet<Product> Products { get; set; }
-        public DbSet<ProductCategory> ProductCatagories { get; set; }
+        public DbSet<ProductCategory> ProductCategories { get; set; }
 
         public DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }

@@ -12,6 +12,5 @@ namespace PhotographyOnlineStore.Core.ViewModel
     {
         public IEnumerable<Product> Products { get; set; }
         public IEnumerable<ProductCategory> ProductCategories { get; set; }
-
     }
 }
