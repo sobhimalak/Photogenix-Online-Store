@@ -64,5 +64,10 @@ namespace LexShop.WebUI.Controllers
 
             return View();
         }
+
+        public ActionResult CheckOut()
+        {
+            return View();
+        }
     }
 }

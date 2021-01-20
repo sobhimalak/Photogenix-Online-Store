@@ -25,11 +25,13 @@ namespace PhotographyOnlineStore.WebUI.Controllers
 
         public ActionResult AddToShoppingCart(string Id)
         {
+           
             shoppingCartService.AddToShoppingCart(this.HttpContext, Id);
 
             return RedirectToAction("Index");
+           
         }
-
+       
         public ActionResult RemoveFromShoppingCart(string Id)
         {
             shoppingCartService.RemoveFromShoppingCart(this.HttpContext, Id);
@@ -43,5 +45,7 @@ namespace PhotographyOnlineStore.WebUI.Controllers
 
             return PartialView(shoppingCartSummary);
         }
+
     }
 }
+
