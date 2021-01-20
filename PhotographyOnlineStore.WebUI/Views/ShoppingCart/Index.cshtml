@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Shopping Cart";
 }
-
+<hr />
 <h2>Shopping Cart</h2>
 <hr />
 <table class="table">
@@ -19,7 +19,7 @@
             @Html.DisplayNameFor(model => model.Price)
         </th>
         <th>
-            Line Total
+            Total
         </th>
         <th></th>
     </tr>
@@ -52,3 +52,6 @@
     </tr>
 
 </table>
+<div class="col-md-12">
+    <a href="" class="btn btn-default" style="border-radius:10px">Add To Basket</a>
+</div>

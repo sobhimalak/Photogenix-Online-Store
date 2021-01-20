@@ -15,35 +15,25 @@
             <div class="col-md-6 col-sm-6 col-xs-6">
                 <div id="logo">
                     <h1><a href="#">Photogenix <span>Online Store</span></a></h1>
-                    
                 </div>
             </div>
 
             @*<ul class=" nav-item col-md-6 col-sm-6 col-xs-6 card-columns container-fluid" style="list-style:none;">
-                <li class="p-2">@Html.Partial("_LoginPartial")</li>
-            </ul>*@
+                    <li class="p-2">@Html.Partial("_LoginPartial")</li>
+                </ul>*@
         </div>
-        
+
     </div>
 
-    <div class="row">
 
-        <div class="col-md-12">
-            <div class="nav-menus">
-                <ul class="nav nav-pills">
-                </ul>
-            </div>
-        </div>
-    </div>
     <!--LOGO Ends-->
-    <nav class="navbar container-md navbar-expand-lg navbar-light bg-transparent">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-                @Html.ActionLink("PHOTOGRAPGY ONLINE", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark bs-popover-auto sticky-top">
+        <a class="navbar-brand">@Html.ActionLink("PHOTOGRAPGY ONLINE", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav" style="text-transform:uppercase">
                 <li class="nav-item active p-2" aria-current="page">@Html.ActionLink("Home", "Index", "Home")</li>
                 <li class="nav-item p-2">@Html.ActionLink("Product Admin", "Index", "ProductManager")</li>
@@ -54,9 +44,7 @@
             </ul>
             @Html.Partial("_LoginPartial")
         </div>
-        </div>
     </nav>
-
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -70,3 +58,4 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+

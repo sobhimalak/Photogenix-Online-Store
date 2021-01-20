@@ -1,8 +1,8 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
 
 body {
-    background-color: #5b087f;
-    color:#888;
+    background-color: #120219;
+    color:#fff;
 }
 
 body, section, html {
@@ -19,6 +19,13 @@ body, section, html {
     background-color: #490765;
 }
 
+.body-content{
+    color:#605e5e
+}
+.table{
+    color:#ffffff;
+    
+}
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -40,14 +47,6 @@ textarea {
 }
 
 
-
-
-
-.form-control {
-    border-radius: 10px;
-}
-
-
 a:visited {
     color: #e1a6fb !important;
     webkit-transition: color 0.5s;
@@ -65,28 +64,15 @@ a:focus {
     color: #fff !important;
 }
 
-#hero {
-    background: #b200ff;
-    padding: 20px 50px 41px;
-    color: #ffffff;
-}
 
 
-    #hero .mgmt-links-wrapper .link-box {
-        background: #5b087f;
-        padding: 34px 10px;
-        text-align: center;
-        min-height: 150px;
-        margin-bottom: 10px;
-        -webkit-transition: .5s all ease;
-        -moz-transition: .5s all ease;
-        transition: .5s all ease;
-    }
+
+  
 
 
 nav {
     background-color: #280438;
-    border-radius: 10px
+   
 }
 
 
@@ -94,6 +80,7 @@ nav {
 #logo {
     margin-bottom: 40px;
     margin-top: -5em;
+   
 }
 
     #logo h1,
@@ -105,11 +92,13 @@ nav {
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: -1px;
+        
     }
 
         #logo h1 span,
         #logo h2 span {
             font-weight: 300;
+           
         }
 
         #logo h1 a,
@@ -128,52 +117,7 @@ nav {
             }
 
 
-.account {
-    text-align: right;
-}
-
-    .account a {
-        color: #333;
-        text-decoration: none;
-    }
-
-        .account a:hover {
-            color: #333;
-            text-decoration: underline;
-        }
-
-    .account h4 {
-        font-weight: 600;
-        text-transform: uppercase;
-        line-height: 20px;
-        margin-bottom: 10px;
-    }
-
-    .account ul {
-        list-style-type: none;
-        margin-left: -20px;
-        float: right;
-    }
-
-        .account ul > li {
-            float: left;
-            margin: 0 0 0 10px;
-        }
-
-            .account ul > li:nth-child(1),
-            .account ul > #your-account {
-                border-right: 1px solid #333;
-                padding-right: 12px;
-            }
-
-
-/*[4. NAV MENU]*/
-
-
-.nav-menus {
-    border-top: 2px solid #333;
-    padding-bottom: 20px;
-}
+/*[CATEGORY MENU]*/
 
 .list-group-item{
     background-color:#5b087f;
