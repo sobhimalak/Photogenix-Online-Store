@@ -39,22 +39,6 @@
             <div class="col-md-12">
                 <a href="@Url.Action("AddToShoppingCart","ShoppingCart", new { Id=item.Id})" class="btn btn-default">Add to Shopping Cart</a>
             </div>
-
-
-            <script src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
-            <script src='jquery.elevateZoom-2.5.3.min.js'></script>
-
-            <div>
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/Content/ProductImages/@item.Image" data-zoom-image="~/Content/ProductImages/@item.Image" />
-            </div>
-            <script>
-                $("# Image1").elevateZoom({ gallery: 'gallery_01', cursor: 'pointer', galleryActiveClass: 'active' });
-                //pass the images to Fancybox
-                $("# Image1").bind("click", function (e) {
-                    var ez = $('# Image1).data('elevateZoom');
-                                            return false;
-                });
-            </script>
         </div>
     }
 </div>
