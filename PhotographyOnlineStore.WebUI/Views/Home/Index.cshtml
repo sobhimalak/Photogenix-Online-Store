@@ -1,6 +1,4 @@
-﻿
-@model PhotographyOnlineStore.Core.ViewModels.ProductListViewModel
-
+﻿@*@model PhotographyOnlineStore.Core.ViewModels.ProductListViewModel*@
 @{
     ViewBag.Title = "Home Page";
 }
@@ -18,42 +16,93 @@
     </div>
 </div>
 
+<div class="container col-md-12">
 
-<div class="col-md-10">
-    @foreach (var item in Model.Products)
-    {
-    <div class="col-md-3" style="height:450px;padding:10px;margin:10px;border: solid thin whitesmoke">
-        <div class="col-md-12">
-            <img class="img" style="height:250px; width:150px" src="~/Content/ProductImages/@item.Image" />
-        </div>
-        <div class="col-md-12">
-            <strong>@Html.ActionLink(item.Name, "Details", new { id = item.Id })</strong>
-        </div>
-        <div class="col-md-12">
-            <p>@item.Description</p>
-        </div>
-        <div class="col-md-12">
-            <p>@item.Price</p>
-        </div>
-        <div class="col-md-12">
-            <a href="@Url.Action("AddToShoppingCart","ShoppingCart", new { Id=item.Id})" class="btn btn-default">Add to Shopping Cart</a>
-        </div>
+    <div class="row">
 
+        <div class="col-lg-3">
+            <h1 class="my-4">Products</h1>
+        </div>
+        <!-- /.col-lg-3 -->
+        @*<div class="col-md-10">
+                @foreach (var item in Model.Products)
 
-        <script src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
-        <script src='jquery.elevateZoom-2.5.3.min.js'></script>
+                {
+                    <div class="col-md-4" style="height:450px; padding:10px; border:solid thin whitesmoke">
+                        <div class="col-md-12">
+                            <img src="~/Content/ProductImages/@item.Image" class="img-responsive" style="height:250px" />
+                            <hr />
+                        </div>
+                        <div class="col-md-12">
+                            <strong>@Html.ActionLink(item.Name, "Details", new { Id = item.Id })</strong>
+                        </div>
 
-            <div>
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/Content/ProductImages/@item.Image" data-zoom-image="~/Content/ProductImages/@item.Image" />
+                        <div class="col-md-12">
+                            <p>@item.Description</p>
+                        </div>
+
+                        <div class="col-md-12">
+                            <p>@item.Price</p>
+                        </div>
+
+                        <div class="col-md-12">
+                            <a href="@Url.Action("AddToBasket", "Basket", new { Id =item.Id} )" class="btn btn-secondary" style="border-radius:35px">Add To Basket</a>
+                        </div>
+                    </div>
+                }
+
+            </div>*@
+        <!-- Product with picture -->
+        <div class="row">
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Item One</a>
+                        </h4>
+                        <h5>$24.99</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                    </div>
+                </div>
             </div>
-            <script>
-                $("# Image1").elevateZoom({ gallery: 'gallery_01', cursor: 'pointer', galleryActiveClass: 'active' });
-                //pass the images to Fancybox
-                $("# Image1").bind("click", function (e) {
-                    var ez = $('# Image1).data('elevateZoom');
-                    return false;
-                });
-            </script>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Item Two</a>
+                        </h4>
+                        <h5>$24.99</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Item Three</a>
+                        </h4>
+                        <h5>$24.99</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     }
 </div>
