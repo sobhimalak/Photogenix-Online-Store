@@ -5,7 +5,7 @@
 }
 
 <h2>Shopping Cart</h2>
-
+<hr />
 <table class="table">
     <tr>
         <th></th>
@@ -42,7 +42,7 @@
                 @String.Format("{0:c}", item.Price * item.Quantity)
             </td>
             <td>
-                <a href="@Url.Action("RemoveFromShoppingCart", "ShoppingCart", new { Id=item.Id })" class="btn btn-dark">Delete</a>
+                <a href="@Url.Action("RemoveFromShoppingCart", "ShoppingCart", new { Id=item.Id })" class="btn btn-default">Delete</a>
             </td>
         </tr>
     }

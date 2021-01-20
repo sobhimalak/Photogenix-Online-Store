@@ -23,10 +23,10 @@
         <ul class="navbar-nav mr-auto">
 
             @Html.ActionLink("All", "Index", null, new { @class = Request["Category"] == null ? "list-group-item active" : "list-group-item" })
-                @foreach (var cat in Model.ProductCategories)
-                {
-                    @Html.ActionLink(cat.Category, "Index", new { Category = cat.Category }, new { @class = Request["Category"] == cat.Category ? "list-group-item active" : "list-group-item" })
-                }
+            @foreach (var cat in Model.ProductCategories)
+            {
+                @Html.ActionLink(cat.Category, "Index", new { Category = cat.Category }, new { @class = Request["Category"] == cat.Category ? "list-group-item active" : "list-group-item" })
+            }
         </ul>
         <form class="form-inline">
             <div class="md-form my-0">
@@ -39,61 +39,45 @@
 </nav>
 <!--/.Navbar-->
 
-        
+
 
 <div class="container col-md-12">
 
     <div class="row">
+        
+            @foreach (var item in Model.Products)
+            {
+               
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100" style="background-color:#d1d1d1">
+                        <img src="~/Content/ProductImages/@item.Image" class="img-responsive" style="height:250px" />
+                        <div class="card-body">
+                            <h4 class="card-title" style="color:#b200ff">
+                                <strong>
+                                    @Html.ActionLink(item.Name, "Details", new
+                                    {
+                                        Id = item.Id
+                            })
+                                </strong>
+                            </h4>
+                            <p>@item.Price</p>
+                            <p>@item.Description</p>
+                            <div class="col-md-12">
+                                <a href="@Url.Action("AddToShoppingCart", "ShoppingCart", new { Id =item.Id} )" class="btn btn-default" style="border-radius:35px">Add To Basket</a>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                        </div>
 
-        <div class="col-lg-3">
-            <h1 class="my-4">Products</h1>
-        </div>
-        <div class="col-md-10">
-                @foreach (var item in Model.Products)
-
-                {
-            <div class="col-md-4" style="height:450px; padding:10px; border:solid thin whitesmoke">
-                <div class="col-md-12">
-                    <img src="~/Content/ProductImages/@item.Image" class="img-responsive" style="height:250px" />
-                    <hr />
+                    </div>
                 </div>
-                <div class="col-md-12">
-                    <strong>@Html.ActionLink(item.Name, "Details", new { Id = item.Id })</strong>
-                </div>
+      
+        }
 
-                <div class="col-md-12">
-                    <p>@item.Description</p>
-                </div>
-
-                <div class="col-md-12">
-                    <p>@item.Price</p>
-                </div>
-
-                <div class="col-md-12">
-                    <a href="@Url.Action("AddToShoppingCart", "ShoppingCart", new { Id =item.Id} )" class="btn btn-default" style="border-radius:35px">Add To Basket</a>
-                </div>
-                <script src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
-                <script src='jquery.elevateZoom-2.5.3.min.js'></script>
-
-                <div>
-                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Content/ProductImages/@item.Image" data-zoom-image="~/Content/ProductImages/@item.Image" />
-                </div>
-                <script>
-                    $("# Image1").elevateZoom({ gallery: 'gallery_01', cursor: 'pointer', galleryActiveClass: 'active' });
-                    //pass the images to Fancybox
-                    $("# Image1").bind("click", function (e) {
-                        var ez = $('# Image1).data('elevateZoom');
-                                                return false;
-                    });
-                </script>
-            </div>
-                }
-
-            </div>
-
-
-    </div>
+       
 </div>
 
-<div class="col-md-12 clearfix" />
+
+    <div class="col-md-12 clearfix" />
 
