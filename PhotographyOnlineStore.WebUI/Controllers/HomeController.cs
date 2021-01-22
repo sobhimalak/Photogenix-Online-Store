@@ -18,24 +18,34 @@ namespace LexShop.WebUI.Controllers
             context = productContext;
             productCategories = productCategoryContext;
         }
-        public ActionResult Index(string Category = null)
+
+        public ActionResult Index(string searchType = null, string searchValue = null)
         {
-            List<Product> products;
+            List<Product> products = null;
             List<ProductCategory> categories = productCategories.Collection().ToList();
 
-            if (Category == null)
+            if (searchValue == null)
             {
                 products = context.Collection().ToList();
             }
             else
             {
-                products = context.Collection().Where(p => p.Category == Category).ToList();
+                if (searchType == "Product")
+                {
+                    products = context.Collection().Where(p => p.Name.Contains(searchValue)).ToList();
+                }
+                else if (searchType == "Catagory")
+                {
+                    products = context.Collection().Where(p => p.Category == searchValue).ToList();
+                }
 
             }
+
             ProductListViewModel model = new ProductListViewModel();
             model.Products = products;
             model.ProductCategories = categories;
-            System.Diagnostics.Debug.WriteLine("products: " + products.Count);
+
+            //            System.Diagnostics.Debug.WriteLine("searchType: " + searchType + "searchValue: " + searchValue);
             return View(model);
         }
 
@@ -62,11 +72,6 @@ namespace LexShop.WebUI.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
-            return View();
-        }
-
-        public ActionResult CheckOut()
-        {
             return View();
         }
     }

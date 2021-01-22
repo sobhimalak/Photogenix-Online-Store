@@ -20,18 +20,19 @@
     <div class="collapse navbar-collapse" id="navbarNav2">
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
-
-            @Html.ActionLink("All", "Index", null, new { @class = Request["Category"] == null ? "list-group-item active" : "list-group-item" })
+            @Html.ActionLink("All", "Index", null, new { @class = Request["Category"] == null ? "list-group-item active" : "list-group-item", name = "Cat" })
             @foreach (var cat in Model.ProductCategories)
             {
-                @Html.ActionLink(cat.Category, "Index", new { Category = cat.Category }, new { @class = Request["Category"] == cat.Category ? "list-group-item active" : "list-group-item" })
+                @Html.ActionLink(cat.Category, "Index", new { searchType = "Catagory", searchValue = cat.Category, }, new { @class = Request["Category"] == cat.Category ? "list-group-item active" : "list-group-item", name = "Cat" })
             }
         </ul>
-        <form class="form-inline">
-            <div class="md-form my-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            </div>
+
+        <form method="get" action="@Url.Action("Index", "Home")">
+            <input type="text" name="searchValue" placeholder="Product Name ..." />
+            <input type="hidden" name="searchType" value="Product" />
+            <button type="submit">Search</button>
         </form>
+
     </div>
     <!-- Collapsible content -->
 
@@ -43,40 +44,35 @@
 <div class="container col-md-12">
 
     <div class="row">
-        
-            @foreach (var item in Model.Products)
-            {
-               
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="card h-100" style="background-color:#d1d1d1">
-                        <img src="~/Content/ProductImages/@item.Image" class="img-responsive" style="height:250px" />
-                        <div class="card-body">
-                            <h4 class="card-title" style="color:#b200ff">
-                                <strong>
-                                    @Html.ActionLink(item.Name, "Details", new
-                                    {
-                                        Id = item.Id
-                            })
-                                </strong>
-                            </h4>
-                            <p>@item.Price</p>
-                            <p>@item.Description</p>
-                            <div class="col-md-12">
-                                <a href="@Url.Action("AddToShoppingCart", "ShoppingCart", new { Id =item.Id} )" class="btn btn-default" style="border-radius:35px">Add To Basket</a>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                        </div>
 
+        @foreach (var item in Model.Products)
+        {
+
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card h-100" style="background-color:#d1d1d1">
+                    <img src="~/Content/ProductImages/@item.Image" class="img-responsive" style="height:250px" />
+                    <div class="card-body">
+                        <h4 class="card-title" style="color:#b200ff">
+                            <strong>
+                                @Html.ActionLink(item.Name, "Details", new
+                                {
+                                    Id = item.Id
+                                })
+                            </strong>
+                        </h4>
+                        <p>@item.Price</p>
+                        <p>@item.Description</p>
+                        <div class="col-md-12">
+                            <a href="@Url.Action("AddToShoppingCart", "ShoppingCart", new { Id =item.Id} )" class="btn btn-default" style="border-radius:35px">Add To Basket</a>
+                        </div>
                     </div>
+                    <div class="card-footer">
+                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                    </div>
+
                 </div>
-      
-        }
-
-       
-</div>
+            </div>}
 
 
-    
+    </div>
 
