@@ -1,7 +1,7 @@
 ﻿@model PhotographyOnlineStore.Core.ViewModels.ShoppingCartSummaryViewModel
 
 
-<ul class="nav navbar-nav navbar-right">
-    <li><a href="@Url.Action("Index", "ShoppingCart")">@Model.ShoppingCartCount items</a></li>
-    <li><a href="@Url.Action("Index", "ShoppingCart")">@String.Format("{0:c}", Model.ShoppingCartTotal)</a></li>
+<ul class="nav navbar-nav">
+    <li class="p-2"><a href="@Url.Action("Index", "ShoppingCart")">@Model.ShoppingCartCount items</a></li>
+    <li class="p-2"><a href="@Url.Action("Index", "ShoppingCart")">@String.Format("{0:c}", Model.ShoppingCartTotal)</a></li>
 </ul>
