@@ -1,4 +1,4 @@
-﻿using PhotographyOnlineStore.Core.Models;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +8,6 @@ namespace PhotographyOnlineStore.Core.Models
 {
     public class ProductCategory : BaseEntity
     {
-        public String Category { get; set; }
+        public string Category { get; set; }
     }
 }

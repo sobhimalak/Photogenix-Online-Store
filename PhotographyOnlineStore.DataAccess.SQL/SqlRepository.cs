@@ -5,7 +5,7 @@ using PhotographyOnlineStore.Core.Models;
 
 namespace PhotographyOnlineStore.DataAccess.SQL
 {
-    public class SqlRepositoryData<T> : IRepository<T> where T : BaseEntity
+    public class SqlRepository<T> : IRepository<T> where T : BaseEntity
     {
         internal DataContext db;
         internal DbSet<T> dbSet;
@@ -13,7 +13,7 @@ namespace PhotographyOnlineStore.DataAccess.SQL
         //       private readonly DataContext db;
         //       string className;
 
-        public SqlRepositoryData(DataContext db)
+        public SqlRepository(DataContext db)
         {
             this.db = db;
             this.dbSet = db.Set<T>();

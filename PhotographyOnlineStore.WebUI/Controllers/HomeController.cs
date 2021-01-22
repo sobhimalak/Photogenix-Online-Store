@@ -1,18 +1,67 @@
-﻿using System;
+﻿using PhotographyOnlineStore.Core.Contracts;
+using PhotographyOnlineStore.Core.Models;
+using PhotographyOnlineStore.Core.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace PhotographyOnlineStore.WebUI.Controllers
+namespace LexShop.WebUI.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        IRepository<Product> context;
+        IRepository<ProductCategory> productCategories;
+        public HomeController(IRepository<Product> productContext, IRepository<ProductCategory> productCategoryContext)
         {
-            return View();
+            context = productContext;
+            productCategories = productCategoryContext;
         }
 
+        public ActionResult Index(string searchType = null, string searchValue = null)
+        {
+            List<Product> products = null;
+            List<ProductCategory> categories = productCategories.Collection().ToList();
+
+            if (searchValue == null)
+            {
+                products = context.Collection().ToList();
+            }
+            else
+            {
+                if (searchType == "Product")
+                {
+                    products = context.Collection().Where(p => p.Name.Contains(searchValue)).ToList();
+
+                }
+                else if (searchType == "Catagory")
+                {
+                    products = context.Collection().Where(p => p.Category == searchValue).ToList();
+                }
+
+            }
+
+            ProductListViewModel model = new ProductListViewModel();
+            model.Products = products;
+            model.ProductCategories = categories;
+
+            //            System.Diagnostics.Debug.WriteLine("searchType: " + searchType + "searchValue: " + searchValue);
+            return View(model);
+        }
+
+        public ActionResult Details(string Id)
+        {
+            Product product = context.Find(Id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                return View(product);
+            }
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

@@ -10,7 +10,7 @@ using System.Web;
 
 namespace PhotographyOnlineStore.Services
 {
-    class ShoppingCartService : IShoppingCartService
+    public class ShoppingCartService : IShoppingCartService
     {
         IRepository<Product> productContext;
         IRepository<ShoppingCart> shoppingCartContext;

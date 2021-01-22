@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PhotographyOnlineStore.Core.ViewModel
+namespace PhotographyOnlineStore.Core.ViewModels
 {
     public class ProductListViewModel
     {
-        public IEnumerable<Product> products { get; set; }
+        public IEnumerable<Product> Products { get; set; }
         public IEnumerable<ProductCategory> ProductCategories { get; set; }
 
     }

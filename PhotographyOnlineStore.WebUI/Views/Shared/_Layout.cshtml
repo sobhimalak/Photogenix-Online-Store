@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Photogenix Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
+    <!--LOGO-->
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-6">
@@ -16,97 +17,43 @@
                     <h1><a href="#">Photogenix <span>Online Store</span></a></h1>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="row">
-
-        <div class="col-md-12">
-            <div class="nav-menus">
-                <ul class="nav nav-pills">
-                </ul>
-            </div>
+            @*<ul class=" nav-item col-md-6 col-sm-6 col-xs-6 card-columns container-fluid" style="list-style:none;">
+                    <li class="p-2">@Html.Partial("_LoginPartial")</li>
+                </ul>*@
         </div>
+
     </div>
 
 
-    <!-- Navbar -->
-    <nav class=" navbar-expand-lg navbar-light scrolling-navbar">
-
-        <div class="container">
-
-            <!-- Collapse -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Links -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                <!-- Left -->
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-link waves-effect">@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li class="nav-link waves-effect">@Html.ActionLink("About", "About", "Home")</li>
-                    <li class="nav-link waves-effect">@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li class="nav-link waves-effect">@Html.Partial("_LoginPartial")</li>
-                </ul>
-                <!-- Right -->
-                <ul class="navbar-nav nav-flex-icons">
-                    <li class="nav-item">
-                        <a class="nav-link waves-effect">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="clearfix d-none d-sm-inline-block"> Cart </span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+    <!--LOGO Ends-->
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark bs-popover-auto sticky-top">
+        <a class="navbar-brand">@Html.ActionLink("PHOTOGRAPGY ONLINE", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav" style="text-transform:uppercase">
+                <li class="nav-item active p-2" aria-current="page">@Html.ActionLink("Home", "Index", "Home")</li>
+                <li class="nav-item p-2">@Html.ActionLink("Product Admin", "Index", "ProductManager")</li>
+                <li class="nav-item p-2">@Html.ActionLink("Category Admin", "Index", "ProductCategoryManager")</li>
+                <li class="nav-item p-2">@Html.ActionLink("Shopping Cart", "Index", "ShoppingCart")</li>
+                <li class="nav-item p-2">@Html.ActionLink("About", "About", "Home")</li>
+                <li class="nav-item p-2">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li class="nav-item p-2">  @{ Html.RenderAction("ShoppingCartSummary", "ShoppingCart"); }  </li>
+            </ul>
+            @Html.Partial("_LoginPartial")
+          
         </div>
     </nav>
-    <!-- Navbar -->
-    <div class="container">
-
-        <!--Navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark  lighten-3 mt-3 mb-5">
-
-            <!-- Navbar brand -->
-            <span class="navbar-brand">Categories:</span>
-
-            <!-- Collapse button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Collapsible content -->
-            <div class="collapse navbar-collapse" id="basicNav">
-                <!-- Links -->
-                <ul class="navbar-nav mr-auto">
-
-                    @*@Html.ActionLink("All", "Index", null, new { @class = Request["Category"] == null ? "list-group-item active" : "list-group-item" })
-                    @foreach (var cat in Model.ProductCategories)
-                    {
-                        @Html.ActionLink(cat.Category, "Index", new { Category = cat.Category }, new { @class = Request["Category"] == cat.Category ? "list-group-item active" : "list-group-item" })
-                    }*@
-                </ul>
-                    <form class="form-inline">
-                        <div class="md-form my-0">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                        </div>
-                    </form>
-            </div>
-            <!-- Collapsible content -->
-
-        </nav>
-        <!--/.Navbar-->
-
-        <div class="container body-content">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-            </footer>
-        </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Photogenix Application</p>
+        </footer>
+    </div>
 
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
@@ -114,3 +61,4 @@
     </div>
 </body>
 </html>
+
