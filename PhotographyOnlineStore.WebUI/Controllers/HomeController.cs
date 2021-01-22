@@ -33,6 +33,7 @@ namespace LexShop.WebUI.Controllers
                 if (searchType == "Product")
                 {
                     products = context.Collection().Where(p => p.Name.Contains(searchValue)).ToList();
+
                 }
                 else if (searchType == "Catagory")
                 {
