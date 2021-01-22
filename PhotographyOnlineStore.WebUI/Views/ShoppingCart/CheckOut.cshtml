@@ -1,0 +1,68 @@
+﻿@model IEnumerable<PhotographyOnlineStore.Core.ViewModels.ShoppingCartItemViewModel>
+@{
+    ViewBag.Title = "CheckOut";
+}
+
+<h2>CheckOut</h2>
+
+
+
+
+<hr />
+
+<hr />
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            Total
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><img style="height:50px" class="img" src="~/Content/ProductImages/@item.Image" /></td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+
+            <td>
+                @String.Format("{0:c}", item.Price)
+            </td>
+            <td>
+                @String.Format("{0:c}", item.Price * item.Quantity)
+            </td>
+            <td>
+                <a href="@Url.Action("RemoveFromShoppingCart", "ShoppingCart", new { Id=item.Id })" class="btn btn-default">Delete</a>
+            </td>
+        </tr>
+    }
+    <tr>
+        <td colspan="4" style="text-align:right"><strong>Basket Total</strong></td>
+        <td>@String.Format("{0:c}", (from p in Model select p.Price * p.Quantity).Sum())</td>
+    </tr>
+
+</table>
+
+<input type="submit" name="name" value="Update Cart" class="btn btn-default" style="border-radius:10px;" />
+
+
+<div class="col-md-12 mr-3">
+    <a href=" @Url.Action("Index", "Home")" class="btn btn-default" style="border-radius:10px">Continue Shopping</a>
+    <a href=" @Url.Action("CheckOut", "CheckOut", "ShoppingCart")" class="btn btn-default" style="border-radius:10px">Check Out</a>
+
+</div>
