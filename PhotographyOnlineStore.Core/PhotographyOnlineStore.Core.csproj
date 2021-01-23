@@ -7,8 +7,8 @@
     <ProjectGuid>{ED78890F-388C-4160-9177-F57CA0C3823E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PhotoographyOnlineStore.Core</RootNamespace>
-    <AssemblyName>PhotoographyOnlineStore.Core</AssemblyName>
+    <RootNamespace>PhotographyOnlineStore.Core</RootNamespace>
+    <AssemblyName>PhotographyOnlineStore.Core</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -43,14 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\ICheckoutService.cs" />
     <Compile Include="Contracts\IRepository.cs" />
     <Compile Include="Contracts\IShoppingCartService.cs" />
     <Compile Include="Models\BaseEntity.cs" />
+    <Compile Include="Models\Checkout.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductCategory.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Models\ShoppingCartItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\CheckoutViewModel.cs" />
     <Compile Include="ViewModels\ProductListViewModel.cs" />
     <Compile Include="ViewModels\ProductManagerViewModel.cs" />
     <Compile Include="ViewModels\ShoppingCartItemViewModel.cs" />
