@@ -58,19 +58,21 @@ namespace PhotographyOnlineStore.Services
 
             if (shoppingCart != null)
             {
-                var results = (from b in shoppingCart.ShoppingCartItems
-                               join p in productContext.Collection() on b.ProductId equals p.Id
-                               select new CheckoutViewModel()
-                               {
-                                   Id = b.Id,
-                                   Quantity = b.Quantity,
-                                   ProductName = p.Name,
-                                   Image = p.Image,
-                                   Price = p.Price
-                               }
-                              ).ToList();
+                                var results = (from b in shoppingCart.ShoppingCartItems
+                                               join p in productContext.Collection() on b.ProductId equals p.Id
+                                               select new CheckoutViewModel()
+                                               {
+                                                   Id = b.Id,
+                                                   Quantity = b.Quantity,
+                                                   ProductName = p.Name,
+                                                   Image = p.Image,
+                                                   Price = p.Price
+                                               }
+                                              ).ToList();
 
-                return results;
+                                return results;
+                
+                return new List<CheckoutViewModel>();
             }
             else
             {
