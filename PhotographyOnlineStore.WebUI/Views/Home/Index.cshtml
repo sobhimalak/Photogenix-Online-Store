@@ -27,12 +27,13 @@
             }
         </ul>
 
-        <form method="get" action="@Url.Action("Index", "Home")">
-            <input type="text" name="searchValue" placeholder="Product Name ..." />
-            <input type="hidden" name="searchType" value="Product" />
-            <button type="submit">Search</button>
+        <form class="form-inline" method="get" action="@Url.Action("Index", "Home")">
+            <div class="md-form my-0">
+                <input class="form-control mr-sm-2" type="text" name="searchValue" placeholder="Product Name" />
+                <input type="hidden" name="searchType" value="Product" />
+                @*<button type="submit">Search</button>*@
+            </div>
         </form>
-
     </div>
     <!-- Collapsible content -->
 

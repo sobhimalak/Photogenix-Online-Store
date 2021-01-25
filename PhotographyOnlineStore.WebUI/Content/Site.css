@@ -13,14 +13,16 @@ body, section, html {
 .btn{
     background-color:#280438;
     color:#888;
-    border-radius:10px;
+    
 }
 .btn:hover {
     background-color: #490765;
 }
 
-.body-content{
-    color:#605e5e
+    
+
+.body-content {
+    color: #605e5e
 }
 .table{
     color:#ffffff;
