@@ -18,8 +18,7 @@ namespace MvcApplication1.Models
             var config = GetConfig();
             ClientId = ConfigurationManager.AppSettings["clientId"];
             ClientSecret = ConfigurationManager.AppSettings["clientSecret"];
-   //         ClientId = "AcS1LYucC2TIM_2Pfn-6KIjcOQmTEGi8lkVO1uFnIswLT_svxD_pfTzETNnAtEbZ666xOdTOvlqxM9zR";
-   //         ClientSecret = "EG90qJ-rky8KkTVJ_HF8OSR_DP3XABTAuyTrM7-pbMxfSi2xLHpt894hRDK8vJq7v5P2IYwRHsDCjwLF";
+
         }
 
         // Create the configuration map that contains mode and other optional configuration details.
