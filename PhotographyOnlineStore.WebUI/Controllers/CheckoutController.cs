@@ -8,6 +8,7 @@ using PayPal.Api;
 using PhotographyOnlineStore.Core.Models;
 using MvcApplication1.Models;
 using Microsoft.Extensions.Logging;
+using PhotographyOnlineStore.Models;
 
 namespace PhotographyOnlineStore.WebUI.Controllers
 {
@@ -20,6 +21,11 @@ namespace PhotographyOnlineStore.WebUI.Controllers
             this.checkoutService = CheckoutService;
         }
         // GET: ShoppingCart2
+
+        public PartialViewResult partialViewTest()
+        {
+            return PartialView();
+        }
         public ActionResult Index()
         {
             var model = checkoutService.GetShoppingCartItems(this.HttpContext);
@@ -29,7 +35,6 @@ namespace PhotographyOnlineStore.WebUI.Controllers
             ViewBag.Checkout = customer;
 
             return View(model);
-
         }
 
 
@@ -163,8 +168,8 @@ namespace PhotographyOnlineStore.WebUI.Controllers
                 }
             }
             catch (PayPal.PayPalException ex)
-            {            
-//                logger.Error("Error: " + ex.Message);
+            {
+                PaypalLogger.Log("Error: " + ex.Message);
                 return View("FailureView");
             }
 
@@ -250,7 +255,7 @@ namespace PhotographyOnlineStore.WebUI.Controllers
             }
             catch (Exception ex)
             {
- //               Logger.Log("Error" + ex.Message);
+                PaypalLogger.Log("Error: " + ex.Message);
                 return View("FailureView");
             }
 
@@ -328,6 +333,7 @@ namespace PhotographyOnlineStore.WebUI.Controllers
             return this.payment.Create(apiContext);
 
         }
+
 
         public ActionResult SuccessView()
         {

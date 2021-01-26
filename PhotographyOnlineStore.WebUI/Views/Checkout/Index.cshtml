@@ -12,192 +12,192 @@
 
 @ViewBag.Checkout.CustomerName;
 
+@Html Partial("partialViewTest")
 
-    <table class="table">
+<table class="table">
+    <tr>
+        <th>
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            Total
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
         <tr>
-            <th>
+            <td>
+                <img style="height:50px" class="img" src="~/Content/ProductImages/@item.Image" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @String.Format("{0:c}", item.Price)
+            </td>
+            <td>
+                @String.Format("{0:c}", item.Price * item.Quantity)
+            </td>
+        </tr>
+    }
+    <tr>
+        <td colspan="4" style="text-align:right"><strong>Basket Total</strong></td>
+        <td>@String.Format("{0:c}", (from p in Model select p.Price * p.Quantity).Sum())</td>
+    </tr>
 
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Quantity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                Total
-            </th>
+</table>
 
+
+<div class="col-sm-3">
+    <table>
+        <tr>
+            <td colspan="3" style="text-align:center;"><b>Customer's Information</b></td>
+        </tr>
+        <tr>
+            <td>Customer Name:</td>
+            <td><input type="text" name="cusName" /></td>
+        </tr>
+        <tr>
+            <td>Customer Phone:</td>
+            <td><input type="text" name="cusPhone" /></td>
+        </tr>
+        <tr>
+            <td>Customer Email:</td>
+            <td><input type="text" name="cusEmail" /></td>
         </tr>
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    <img style="height:50px" class="img" src="~/Content/ProductImages/@item.Image" />
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProductName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Quantity)
-                </td>
-                <td>
-                    @String.Format("{0:c}", item.Price)
-                </td>
-                <td>
-                    @String.Format("{0:c}", item.Price * item.Quantity)
-                </td>
-            </tr>
-        }
-        <tr>
-            <td colspan="4" style="text-align:right"><strong>Basket Total</strong></td>
-            <td>@String.Format("{0:c}", (from p in Model select p.Price * p.Quantity).Sum())</td>
-        </tr>
 
     </table>
+</div>
 
-
-    <div class="col-sm-3">
-        <table>
-            <tr>
-                <td colspan="3" style="text-align:center;"><b>Customer's Information</b></td>
-            </tr>
-            <tr>
-                <td>Customer Name:</td>
-                <td><input type="text" name="cusName" /></td>
-            </tr>
-            <tr>
-                <td>Customer Phone:</td>
-                <td><input type="text" name="cusPhone" /></td>
-            </tr>
-            <tr>
-                <td>Customer Email:</td>
-                <td><input type="text" name="cusEmail" /></td>
-            </tr>
-
-
-        </table>
-    </div>
-
-    <script type="text/javascript">
-        $("#customer-form").validate({
-            rules: {
-                cusName: {
-                    required: true
-                },
-                cusPhone: {
-                    required: true
-                },
-                cusEmail: {
-                    required: true
-                },
-                cusAddress: {
-                    required: true
-                }
+<script type="text/javascript">
+    $("#customer-form").validate({
+        rules: {
+            cusName: {
+                required: true
+            },
+            cusPhone: {
+                required: true
+            },
+            cusEmail: {
+                required: true
+            },
+            cusAddress: {
+                required: true
             }
-        });</script>
+        }
+    });</script>
 
 
-    <div class="container py-5">
-        <!-- For demo purpose -->
-        <div class="row mb-4">
-            <div class="col-lg-8 mx-auto text-center">
-                <h1 class="display-4">Choose your payment method</h1>
-            </div>
-        </div> <!-- End -->
-        <div class="row">
-            <div class="col-lg-6 mx-auto">
-                <div class="card ">
-                    <div class="card-header">
-                        <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
-                            <!-- Credit card form tabs -->
-                            <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
-                                <li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Credit Card </a> </li>
-                                <li class="nav-item"> <a data-toggle="pill" href="#paypal" class="nav-link "> <i class="fab fa-paypal mr-2"></i> Paypal </a> </li>
-                                <li class="nav-item"> <a data-toggle="pill" href="#net-bankableing" class="nav-link "> <i class="fas fa-mobile-alt mr-2"></i> Klarna </a> </li>
-                                <li class="nav-item"> <a data-toggle="pill" href="#pay-later" class="nav-link "> <i class="fas fa-mobile-alt mr-2"></i> Order Now </a> </li>
-                            </ul>
-                        </div> <!-- End -->
-                        <!-- Credit card form content -->
-                        <div class="tab-content">
-                            <!-- credit card info-->
-                            <div id="credit-card" class="tab-pane fade show active pt-3">
-                                <form role="form">
-                                    <div class="form-group">
-                                        <label for="username">
-                                            <h6>Card Owner</h6>
-                                        </label> <input type="text" name="username" placeholder="Card Owner Name" required class="form-control ">
+<div class="container py-5">
+    <!-- For demo purpose -->
+    <div class="row mb-4">
+        <div class="col-lg-8 mx-auto text-center">
+            <h1 class="display-4">Choose your payment method</h1>
+        </div>
+    </div> <!-- End -->
+    <div class="row">
+        <div class="col-lg-6 mx-auto">
+            <div class="card ">
+                <div class="card-header">
+                    <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
+                        <!-- Credit card form tabs -->
+                        <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
+                            <li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Credit Card </a> </li>
+                            <li class="nav-item"> <a data-toggle="pill" href="#paypal" class="nav-link "> <i class="fab fa-paypal mr-2"></i> Paypal </a> </li>
+                            <li class="nav-item"> <a data-toggle="pill" href="#net-bankableing" class="nav-link "> <i class="fas fa-mobile-alt mr-2"></i> Klarna </a> </li>
+                            <li class="nav-item"> <a data-toggle="pill" href="#pay-later" class="nav-link "> <i class="fas fa-mobile-alt mr-2"></i> Order Now </a> </li>
+                        </ul>
+                    </div> <!-- End -->
+                    <!-- Credit card form content -->
+                    <div class="tab-content">
+                        <!-- credit card info-->
+                        <div id="credit-card" class="tab-pane fade show active pt-3">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="username">
+                                        <h6>Card Owner</h6>
+                                    </label> <input type="text" name="username" placeholder="Card Owner Name" required class="form-control ">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardNumber">
+                                        <h6>Card number</h6>
+                                    </label>
+                                    <div class="input-group">
+                                        <input type="text" name="cardNumber" placeholder="Valid card number" class="form-control " required>
+                                        <div class="input-group-append"> <span class="input-group-text text-muted"> <i class="fab fa-cc-visa mx-1"></i> <i class="fab fa-cc-mastercard mx-1"></i> <i class="fab fa-cc-amex mx-1"></i> </span> </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="cardNumber">
-                                            <h6>Card number</h6>
-                                        </label>
-                                        <div class="input-group">
-                                            <input type="text" name="cardNumber" placeholder="Valid card number" class="form-control " required>
-                                            <div class="input-group-append"> <span class="input-group-text text-muted"> <i class="fab fa-cc-visa mx-1"></i> <i class="fab fa-cc-mastercard mx-1"></i> <i class="fab fa-cc-amex mx-1"></i> </span> </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <div class="form-group">
+                                            <label>
+                                                <span class="hidden-xs">
+                                                    <h6>Expiration Date</h6>
+                                                </span>
+                                            </label>
+                                            <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="number" placeholder="YY" name="" class="form-control" required> </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-sm-8">
-                                            <div class="form-group">
-                                                <label>
-                                                    <span class="hidden-xs">
-                                                        <h6>Expiration Date</h6>
-                                                    </span>
-                                                </label>
-                                                <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="number" placeholder="YY" name="" class="form-control" required> </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group mb-4">
-                                                <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
-                                                    <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
-                                                </label> <input type="text" required class="form-control">
-                                            </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group mb-4">
+                                            <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
+                                                <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
+                                            </label> <input type="text" required class="form-control">
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div class="card-footer" /> <input type="submit" value=" Confirm Payment " class="subscribe btn btn-primary btn-block shadow-sm" onclick="location.href='@Url.Action("PaymentWithCreditCard", "Checkout")'" />
-                                </form>
-                            </div>
-                        </div> <!-- End -->
-                        <!-- Paypal info -->
-                        <div id="paypal" class="tab-pane fade pt-3">
-                            <h6 class="pb-2">Select your paypal account type</h6>
-                            <div class="form-group "> <label class="radio-inline"> <input type="radio" name="optradio" checked> Domestic </label> <label class="radio-inline"> <input type="radio" name="optradio" class="ml-5">International </label></div>
-                            <p> <input type="submit" value=" Log into my Paypal " class="btn btn-primary " onclick="location.href='@Url.Action("PaymentWithPaypal", "Checkout")'" /> </p>
-                            <p class="text-muted"> Note: After clicking on the button, you will be directed to a secure gateway for payment. After completing the payment process, you will be redirected back to the website to view details of your order. </p>
-                        </div> <!-- End -->
-                        <!-- bank transfer info -->
-                        <div id="net-banking" class="tab-pane fade pt-3">
-                            <div class="form-group ">
-                                <label for="Select Your Bank">
-                                    <h6>Select your Bank</h6>
-                                </label> <select class="form-control" id="ccmonth">
-                                    <option value="" selected disabled>--Please select your Bank--</option>
-                                    <option>SwedBank</option>
-                                    <option>Handlesbanken</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <p> <input type="submit" value=" Proceed Payment " class="btn btn-primary " onclick="location.href='@Url.Action("SuccessView", "Checkout")'" /> </p>
-                            </div>
-                            <p class="text-muted">Note: After clicking on the button, you will be directed to a secure gateway for payment. After completing the payment process, you will be redirected back to the website to view details of your order. </p>
-                        </div> <!-- End -->
-
-                        <!-- pay later info -->
-                        <div id="pay-later" class="tab-pane fade pt-3">
-                            <div class="form-group">
-                                <p> <input type="submit" value=" Proceed Order " class="btn btn-primary " onclick="location.href='@Url.Action("SuccessView", "Checkout")'" /> </p>
-                            </div>
-                            <p class="text-muted">Note: After completing the payment process, your order will be prepared. </p>
-                        </div> <!-- End -->
-                        <!-- End -->
-                    </div>
+                                <div class="card-footer" /> <input type="submit" value=" Confirm Payment " class="subscribe btn btn-primary btn-block shadow-sm" onclick="location.href='@Url.Action("PaymentWithCreditCard", "Checkout")'" />
+                            </form>
+                        </div>
+                    </div> <!-- End -->
+                    <!-- Paypal info -->
+                    <div id="paypal" class="tab-pane fade pt-3">
+                        <h6 class="pb-2">Select your paypal account type</h6>
+                        <div class="form-group "> <label class="radio-inline"> <input type="radio" name="optradio" checked> Domestic </label> <label class="radio-inline"> <input type="radio" name="optradio" class="ml-5">International </label></div>
+                        <p> <input type="submit" value=" Log into my Paypal " class="btn btn-primary " onclick="location.href='@Url.Action("PaymentWithPaypal", "Checkout")'" /> </p>
+                        <p class="text-muted"> Note: After clicking on the button, you will be directed to a secure gateway for payment. After completing the payment process, you will be redirected back to the website to view details of your order. </p>
+                    </div> <!-- End -->
+                    <!-- bank transfer info -->
+                    <div id="net-banking" class="tab-pane fade pt-3">
+                        <div class="form-group ">
+                            <label for="Select Your Bank">
+                                <h6>Select your Bank</h6>
+                            </label> <select class="form-control" id="ccmonth">
+                                <option value="" selected disabled>--Please select your Bank--</option>
+                                <option>SwedBank</option>
+                                <option>Handlesbanken</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <p> <input type="submit" value=" Proceed Payment " class="btn btn-primary " onclick="location.href='@Url.Action("SuccessView", "Checkout")'" /> </p>
+                        </div>
+                        <p class="text-muted">Note: After clicking on the button, you will be directed to a secure gateway for payment. After completing the payment process, you will be redirected back to the website to view details of your order. </p>
+                    </div> <!-- End -->
+                    <!-- pay later info -->
+                    <div id="pay-later" class="tab-pane fade pt-3">
+                        <div class="form-group">
+                            <p> <input type="submit" value=" Proceed Order " class="btn btn-primary " onclick="location.href='@Url.Action("SuccessView", "Checkout")'" /> </p>
+                        </div>
+                        <p class="text-muted">Note: After completing the payment process, your order will be prepared. </p>
+                    </div> <!-- End -->
+                    <!-- End -->
+                </div>
             </div>
         </div>
     </div>
