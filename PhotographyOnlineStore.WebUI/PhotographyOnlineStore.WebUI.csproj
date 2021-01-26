@@ -199,17 +199,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202101251132402_Contact.cs" />
-    <Compile Include="Migrations\202101251132402_Contact.Designer.cs">
-      <DependentUpon>202101251132402_Contact.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101251729511_AddCustomer.cs" />
-    <Compile Include="Migrations\202101251729511_AddCustomer.Designer.cs">
-      <DependentUpon>202101251729511_AddCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101260905475_AddCustomer1.cs" />
-    <Compile Include="Migrations\202101260905475_AddCustomer1.Designer.cs">
-      <DependentUpon>202101260905475_AddCustomer1.cs</DependentUpon>
+    <Compile Include="Migrations\202101260923106_database.cs" />
+    <Compile Include="Migrations\202101260923106_database.Designer.cs">
+      <DependentUpon>202101260923106_database.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -420,14 +412,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101251132402_Contact.resx">
-      <DependentUpon>202101251132402_Contact.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101251729511_AddCustomer.resx">
-      <DependentUpon>202101251729511_AddCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101260905475_AddCustomer1.resx">
-      <DependentUpon>202101260905475_AddCustomer1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101260923106_database.resx">
+      <DependentUpon>202101260923106_database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
