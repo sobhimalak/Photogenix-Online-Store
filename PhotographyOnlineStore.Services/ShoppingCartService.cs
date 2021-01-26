@@ -140,11 +140,11 @@ namespace PhotographyOnlineStore.Services
             if (shoppingCart != null)
             {
                 int? shoppingCartCount = (from item in shoppingCart.ShoppingCartItems
-                                    select item.Quantity).Sum();
+                                          select item.Quantity).Sum();
 
                 decimal? shoppingCartTotal = (from item in shoppingCart.ShoppingCartItems
-                                        join p in productContext.Collection() on item.ProductId equals p.Id
-                                        select item.Quantity * p.Price).Sum();
+                                              join p in productContext.Collection() on item.ProductId equals p.Id
+                                              select item.Quantity * p.Price).Sum();
 
                 model.ShoppingCartCount = shoppingCartCount ?? 0;
                 model.ShoppingCartTotal = shoppingCartTotal ?? decimal.Zero;

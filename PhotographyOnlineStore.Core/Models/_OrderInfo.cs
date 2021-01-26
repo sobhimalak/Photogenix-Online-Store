@@ -1,24 +1,17 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace PhotographyOnlineStore.Core.Models
 {
-    public class ShoppingCart : BaseEntity
+    public class _OrderInfo
     {
-    /*
         public string CustomerName { get; set; }
         public string CustomerEmail { get; set; }
         public string CustomerTelephone { get; set; }
         public string BillingAddress { get; set; }
-    */
-        public virtual ICollection<ShoppingCartItem> ShoppingCartItems { get; set; }
 
-        public ShoppingCart()
-        {
-            this.ShoppingCartItems = new List<ShoppingCartItem>();
-        }
     }
 }

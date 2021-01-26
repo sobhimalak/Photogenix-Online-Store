@@ -7,6 +7,8 @@ namespace PhotographyOnlineStore.Core.Models
 {
     public class ShoppingCartItem : BaseEntity
     {
+
+
         public string ShoppingCartId { get; set; }
         public string ProductId { get; set; }
         public int Quantity { get; set; }
