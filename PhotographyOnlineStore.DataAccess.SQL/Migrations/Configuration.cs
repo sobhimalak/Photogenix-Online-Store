@@ -10,6 +10,7 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "PhotographyOnlineStore.DataAccess.SQL.DataContext";
         }
 
         protected override void Seed(PhotographyOnlineStore.DataAccess.SQL.DataContext context)

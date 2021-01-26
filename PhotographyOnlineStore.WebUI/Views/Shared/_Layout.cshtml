@@ -36,9 +36,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav" style="text-transform:uppercase">
                 <li class="nav-item active p-2" aria-current="page">@Html.ActionLink("Home", "Index", "Home")</li>
-                <li class="nav-item p-2">@Html.ActionLink("Product Admin", "Index", "ProductManager")</li>
-                <li class="nav-item p-2">@Html.ActionLink("Category Admin", "Index", "ProductCategoryManager")</li>
-                <li class="nav-item p-2">@Html.ActionLink("Shopping Cart", "Index", "ShoppingCart")</li>
+                @*<li class="nav-item p-2">@Html.ActionLink("Product Admin", "Index", "ProductManager")</li>
+        <li class="nav-item p-2">@Html.ActionLink("Category Admin", "Index", "ProductCategoryManager")</li>*@
+                @*<li class="nav-item p-2">@Html.ActionLink("Shopping Cart", "Index", "ShoppingCart")</li>*@
+            <li class="nav-item p-2">@Html.ActionLink("Admin", "Index", "Admin")                     </li>
                 <li class="nav-item p-2">@Html.ActionLink("About", "About", "Home")</li>
                 <li class="nav-item p-2">@Html.ActionLink("Contact", "Contact", "Home")</li>
                 @Html.Partial("_LoginPartial")
