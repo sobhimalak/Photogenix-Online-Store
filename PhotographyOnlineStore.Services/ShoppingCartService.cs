@@ -156,5 +156,11 @@ namespace PhotographyOnlineStore.Services
                 return model;
             }
         }
+        public void ClearShoppingCart(HttpContextBase httpContext)
+        {
+            ShoppingCart shoppingCart = GetShoppingCart(httpContext, false);
+            shoppingCart.ShoppingCartItems.Clear();
+            shoppingCartContext.Commit();
+        }
     }
 }

@@ -11,5 +11,7 @@ namespace PhotographyOnlineStore.Core.Contracts
         void RemoveFromShoppingCart(HttpContextBase httpContext, string itemId);
         List<ShoppingCartItemViewModel> GetShoppingCartItems(HttpContextBase httpContext);
         ShoppingCartSummaryViewModel GetShoppingCartSummary(HttpContextBase httpContext);
+        void ClearShoppingCart(HttpContextBase httpContext);
+
     }
 }
