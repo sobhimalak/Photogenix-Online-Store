@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PhotographyOnlineStore.Core.Models;
+using PhotoographyOnlineStore.Core.Models;
 
 namespace PhotographyOnlineStore.DataAccess.SQL
 {
@@ -19,5 +20,6 @@ namespace PhotographyOnlineStore.DataAccess.SQL
 
         public DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+        public DbSet<Customer> Customers { get; set; }
     }
 }

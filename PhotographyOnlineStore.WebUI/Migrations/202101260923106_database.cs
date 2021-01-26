@@ -3,7 +3,7 @@ namespace PhotographyOnlineStore.WebUI.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitalCreate : DbMigration
+    public partial class database : DbMigration
     {
         public override void Up()
         {

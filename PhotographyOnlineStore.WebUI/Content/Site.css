@@ -46,15 +46,18 @@ textarea {
     max-width: 280px;
 }
 
-
-a:visited {
-    color: #e1a6fb !important;
-    webkit-transition: color 0.5s;
-    /* Safari */
-    transition: color 0.5s;
-    text-decoration: none !important;
+a, .nav-item, li {
+    color: #fff !important;
 }
-
+    a:visited {
+        color: #e1a6fb !important;
+        webkit-transition: color 0.5s;
+        /* Safari */
+        transition: color 0.5s;
+        text-decoration: none !important;
+        
+    }
+   
 a:hover,
 a:focus {
     webkit-transition: color 0.5s;
