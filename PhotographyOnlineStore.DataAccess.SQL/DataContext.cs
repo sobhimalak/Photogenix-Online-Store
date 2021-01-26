@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PhotographyOnlineStore.Core.Models;
-using PhotoographyOnlineStore.Core.Models;
+using PhotographyOnlineStore.Core.Models;
 
 namespace PhotographyOnlineStore.DataAccess.SQL
 {

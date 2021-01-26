@@ -1,7 +1,7 @@
 ﻿using PhotographyOnlineStore.Core.Contracts;
 using PhotographyOnlineStore.Core.Models;
 using PhotographyOnlineStore.Core.ViewModels;
-using PhotoographyOnlineStore.Core.Models;
+using PhotographyOnlineStore.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

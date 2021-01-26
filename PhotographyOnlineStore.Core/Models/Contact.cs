@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PhotoographyOnlineStore.Core.Models
+namespace PhotographyOnlineStore.Core.Models
 {
     public class Contact
     {
