@@ -52,6 +52,7 @@ namespace PhotographyOnlineStore.WebUI
             container.RegisterType<IRepository<ShoppingCart>, SqlRepository<ShoppingCart>>();
             container.RegisterType<IRepository<ShoppingCartItem>, SqlRepository<ShoppingCartItem>>();
             container.RegisterType<IShoppingCartService, ShoppingCartService>();
+            container.RegisterType<ICheckoutService, CheckoutService>();
             container.RegisterType<IRepository<Customer>, SqlRepository<Customer>>();
         }
     }

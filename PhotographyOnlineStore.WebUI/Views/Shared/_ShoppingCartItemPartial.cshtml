@@ -1,4 +1,5 @@
-﻿@model IEnumerable<PhotographyOnlineStore.Core.ViewModels.ShoppingCartItemViewModel>
+﻿
+@model IEnumerable<PhotographyOnlineStore.Core.ViewModels.ShoppingCartItemViewModel>
 
 @{
     ViewBag.Title = "Shopping Cart";
@@ -55,11 +56,3 @@
 <div class="col-md-12">
      <a href="@Url.Action("Index", "Checkout")">Checkout</a>
 </div>
-<div class="col-md-12 badge">
-    <button class="btn btn-default" style="border-radius:10px">
-        @Html.ActionLink("Continue Shopping", "Index", "Home")
-    </button>
-    <a href="" class="btn btn-default" style="border-radius:10px">Add To Basket</a>
-
-</div>
-
