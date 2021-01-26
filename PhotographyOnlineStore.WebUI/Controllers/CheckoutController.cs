@@ -24,7 +24,7 @@ namespace PhotographyOnlineStore.WebUI.Controllers
         {
             var model = checkoutService.GetShoppingCartItems(this.HttpContext);
             ViewBag.Message = "Test message";
-            Checkout customer = new Checkout();
+            _Checkout customer = new _Checkout();
             customer.CustomerName = "Anna";
             ViewBag.Checkout = customer;
 
@@ -35,7 +35,7 @@ namespace PhotographyOnlineStore.WebUI.Controllers
 
         public ActionResult ProcessOrder(FormCollection frc)
         {
-            OrderInfo orderInfo = new OrderInfo();
+            _OrderInfo orderInfo = new _OrderInfo();
             orderInfo.CustomerName = frc["cusName"];
             orderInfo.CustomerTelephone = frc["cusPhone"];
             orderInfo.CustomerEmail = frc["cusEmail"];

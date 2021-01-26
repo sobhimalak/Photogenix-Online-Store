@@ -7,13 +7,13 @@ namespace PhotographyOnlineStore.WebUI.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class UpdateShoppingCartBillingInfo : IMigrationMetadata
+    public sealed partial class RefreshDB : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateShoppingCartBillingInfo));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(RefreshDB));
         
         string IMigrationMetadata.Id
         {
-            get { return "202101250716019_UpdateShoppingCartBillingInfo"; }
+            get { return "202101261048577_RefreshDB"; }
         }
         
         string IMigrationMetadata.Source

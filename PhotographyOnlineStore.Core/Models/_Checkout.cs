@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PhotographyOnlineStore.Core.Models
 {
-    public class Checkout
+    public class _Checkout
     {
         public string CustomerName { get; set; }
         public string CustomerEmail { get; set; }

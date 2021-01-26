@@ -3,7 +3,7 @@ namespace PhotographyOnlineStore.WebUI.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class UpdateShoppingCartBillingInfo : DbMigration
+    public partial class RefreshDB : DbMigration
     {
         public override void Up()
         {

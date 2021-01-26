@@ -11,7 +11,7 @@ namespace PhotographyOnlineStore.Core.Contracts
 {
     public interface ICheckoutService
     {
-        void AddBillingInfoToShoppingCart(HttpContextBase httpContext, OrderInfo orderInfo);
+        void AddBillingInfoToShoppingCart(HttpContextBase httpContext, _OrderInfo orderInfo);
         List<CheckoutViewModel> GetShoppingCartItems(HttpContextBase httpContext);
     }
 
