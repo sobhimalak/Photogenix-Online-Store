@@ -27,7 +27,7 @@
 
 
     <!--LOGO Ends-->
-    
+
     <nav class="navbar navbar-expand-lg navbar-light bg-dark bs-popover-auto sticky-top">
         <a class="navbar-brand">@Html.ActionLink("PHOTOGRAPGY ONLINE", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,17 +36,28 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav" style="text-transform:uppercase">
                 <li class="nav-item active p-2" aria-current="page">@Html.ActionLink("Home", "Index", "Home")</li>
-                <li class="nav-item p-2">@Html.ActionLink("Product Admin", "Index", "ProductManager")</li>
-                <li class="nav-item p-2">@Html.ActionLink("Category Admin", "Index", "ProductCategoryManager")</li>
-                <li class="nav-item p-2">@Html.ActionLink("Shopping Cart", "Index", "ShoppingCart")</li>
+                @*<li class="nav-item p-2">@Html.ActionLink("Product Admin", "Index", "ProductManager")</li>
+        <li class="nav-item p-2">@Html.ActionLink("Category Admin", "Index", "ProductCategoryManager")</li>*@
+                @*<li class="nav-item p-2">@Html.ActionLink("Shopping Cart", "Index", "ShoppingCart")</li>*@
+            <li class="nav-item p-2">@Html.ActionLink("Admin", "Index", "Admin")</li>
                 <li class="nav-item p-2">@Html.ActionLink("About", "About", "Home")</li>
                 <li class="nav-item p-2">@Html.ActionLink("Contact", "Contact", "Home")</li>
-                <li class="nav-item p-2">  @{ Html.RenderAction("ShoppingCartSummary", "ShoppingCart"); }  </li>
+                @Html.Partial("_LoginPartial")
+                @*<li class="nav-item p-2">  @{ Html.RenderAction("ShoppingCartSummary", "ShoppingCart"); }  </li>*@
+                @*<li class="nav-item p-2">@Html.ActionLink("Shopping Cart", "Index", "ShoppingCart")</li>*@
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Cart
+                    </a>
+                    <div class="dropdown-menu" style="background-color:#343a40" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item"></a>@{ Html.RenderAction("ShoppingCartSummary", "ShoppingCart"); }
+                    </div>
+                </li>
             </ul>
-            @Html.Partial("_LoginPartial")
-          
+
         </div>
     </nav>
+    <hr />
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -55,9 +66,10 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </div>
 </body>
 </html>
 

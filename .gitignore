@@ -87,10 +87,10 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
-
+imgs/
 # Chutzpah Test files
 _Chutzpah*
-
+Migrations/
 # Visual C++ cache files
 ipch/
 *.aps

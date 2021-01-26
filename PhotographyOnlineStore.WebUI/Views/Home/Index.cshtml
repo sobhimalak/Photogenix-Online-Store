@@ -27,12 +27,13 @@
             }
         </ul>
 
-        <form method="get" action="@Url.Action("Index", "Home")">
-            <input type="text" name="searchValue" placeholder="Product Name ..." />
-            <input type="hidden" name="searchType" value="Product" />
-            <button type="submit">Search</button>
+        <form class="form-inline" method="get" action="@Url.Action("Index", "Home")">
+            <div class="md-form my-0">
+                <input class="form-control mr-sm-2" type="text" name="searchValue" placeholder="Product Name" />
+                <input type="hidden" name="searchType" value="Product" />
+                @*<button type="submit">Search</button>*@
+            </div>
         </form>
-
     </div>
     <!-- Collapsible content -->
 
@@ -49,7 +50,7 @@
         {
 
             <div class="col-md-4 col-sm-6 mb-4">
-                <div class="card h-100" style="background-color:#d1d1d1">
+                <div class="card h-100" style="background-color:rgba(22, 3, 30, 0.90)">
                     <img src="~/Content/ProductImages/@item.Image" class="img-responsive" style="height:250px" />
                     <div class="card-body">
                         <h4 class="card-title" style="color:#b200ff">

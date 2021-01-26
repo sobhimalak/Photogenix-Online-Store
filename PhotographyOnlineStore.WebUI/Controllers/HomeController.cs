@@ -1,9 +1,12 @@
 ﻿using PhotographyOnlineStore.Core.Contracts;
 using PhotographyOnlineStore.Core.Models;
 using PhotographyOnlineStore.Core.ViewModels;
+using PhotoographyOnlineStore.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -33,7 +36,6 @@ namespace LexShop.WebUI.Controllers
                 if (searchType == "Product")
                 {
                     products = context.Collection().Where(p => p.Name.Contains(searchValue)).ToList();
-
                 }
                 else if (searchType == "Catagory")
                 {
@@ -75,5 +77,31 @@ namespace LexShop.WebUI.Controllers
 
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Contact(Contact model)
+        {
+            //if (ModelState.IsValid)
+            //{
+            //    var mail = new MailMessage();
+            //    mail.To.Add(new MailAddress(model.SenderEmail));
+            //    mail.Subject = "Your Email Subject";
+            //    mail.Body = string.Format("<p>Email From: {0} ({1})</p><p>Message:</p><p>{2}</p>", model.SenderName, mail.SenderEmail, model.Message);
+            //    mail.IsBodyHtml = true;
+            //    using (var smtp = new SmtpClient())
+            //    {
+            //        await smtp.SendMailAsync(mail);
+            //        return RedirectToAction("SuccessMessage");
+            //    }
+            //}
+            return View("SuccessMessage");
+        }
+
+        public ActionResult SuccessMessage()
+        {
+            return View();
+        }
+
+        
     }
 }

@@ -13,14 +13,16 @@ body, section, html {
 .btn{
     background-color:#280438;
     color:#888;
-    border-radius:10px;
+    
 }
 .btn:hover {
     background-color: #490765;
 }
 
-.body-content{
-    color:#605e5e
+    
+
+.body-content {
+    color: #605e5e
 }
 .table{
     color:#ffffff;
@@ -46,15 +48,18 @@ textarea {
     max-width: 280px;
 }
 
-
-a:visited {
-    color: #e1a6fb !important;
-    webkit-transition: color 0.5s;
-    /* Safari */
-    transition: color 0.5s;
-    text-decoration: none !important;
+a, .nav-item, li {
+    color: #fff !important;
 }
-
+    a:visited {
+        color: #e1a6fb !important;
+        webkit-transition: color 0.5s;
+        /* Safari */
+        transition: color 0.5s;
+        text-decoration: none !important;
+        
+    }
+   
 a:hover,
 a:focus {
     webkit-transition: color 0.5s;
