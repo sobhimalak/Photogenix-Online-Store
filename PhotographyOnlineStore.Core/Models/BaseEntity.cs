@@ -16,7 +16,6 @@ namespace PhotographyOnlineStore.Core.Models
             this.CreateAt = DateTime.Now;
 
         }
-
-
+        
     }
 }
