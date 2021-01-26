@@ -389,8 +389,8 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\_ShoppingCartItemPartial.cshtml" />
     <Content Include="Views\Checkout\Index.cshtml" />
-    <Content Include="Views\Checkout\SuccessView.cshtml" />
     <Content Include="Views\Checkout\FailureView.cshtml" />
+    <Content Include="Views\Checkout\SuccessView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

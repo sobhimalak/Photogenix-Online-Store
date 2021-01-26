@@ -55,10 +55,12 @@ namespace PhotographyOnlineStore.Services
 
             //  update shopping cart
             ShoppingCart shoppingCart = GetShoppingCart(httpContext, true);
+            
             shoppingCart.CustomerName = orderInfo.CustomerName;
             shoppingCart.CustomerEmail = orderInfo.CustomerEmail;
             shoppingCart.CustomerTelephone = orderInfo.CustomerTelephone;
             shoppingCart.BillingAddress = orderInfo.BillingAddress;
+            
 
             System.Diagnostics.Debug.WriteLine("Adding name to database ... ");
             shoppingCartContext.Commit();

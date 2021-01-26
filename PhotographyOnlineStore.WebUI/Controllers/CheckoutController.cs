@@ -23,6 +23,11 @@ namespace PhotographyOnlineStore.WebUI.Controllers
         public ActionResult Index()
         {
             var model = checkoutService.GetShoppingCartItems(this.HttpContext);
+            ViewBag.Message = "Test message";
+            Checkout customer = new Checkout();
+            customer.CustomerName = "Anna";
+            ViewBag.Checkout = customer;
+
             return View(model);
 
         }
@@ -323,6 +328,12 @@ namespace PhotographyOnlineStore.WebUI.Controllers
             return this.payment.Create(apiContext);
 
         }
+
+        public ActionResult SuccessView()
+        {
+            return View("SuccessView");
+        }
+
     }
 
 }
