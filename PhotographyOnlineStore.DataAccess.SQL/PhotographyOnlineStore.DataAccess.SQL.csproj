@@ -59,6 +59,11 @@
     <Compile Include="Artist.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="Genre.cs" />
+    <Compile Include="Migrations\202101261455393_database.cs" />
+    <Compile Include="Migrations\202101261455393_database.Designer.cs">
+      <DependentUpon>202101261455393_database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +78,11 @@
       <Project>{ed78890f-388c-4160-9177-f57ca0c3823e}</Project>
       <Name>PhotographyOnlineStore.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202101261455393_database.resx">
+      <DependentUpon>202101261455393_database.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

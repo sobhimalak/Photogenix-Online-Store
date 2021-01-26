@@ -69,15 +69,9 @@ a:focus {
     color: #fff !important;
 }
 
-
-
-
-  
-
-
-nav {
-    background-color: #280438;
-   
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+ 
+    background-color: #490765;
 }
 
 
