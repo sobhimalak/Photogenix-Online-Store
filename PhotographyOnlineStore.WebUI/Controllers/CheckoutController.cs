@@ -29,7 +29,7 @@ namespace PhotographyOnlineStore.WebUI.Controllers
         public ActionResult Index()
         {
             var model = checkoutService.GetShoppingCartItems(this.HttpContext);
-            ViewBag.Message = "Test message";
+            ViewBag.Message = "You have reached the checkout out prosess, please procced by filling in your information";
             _Checkout customer = new _Checkout();
             customer.CustomerName = "Anna";
             ViewBag.Checkout = customer;
@@ -65,7 +65,7 @@ namespace PhotographyOnlineStore.WebUI.Controllers
         //Then you will need to create multiple item objects or use some loop to instantiate object
         Item item = new Item();
             item.name = "Demo Item";
-            item.currency = "USD";
+            //item.currency = "USD";
             item.price = "5";
             item.quantity = "1";
             item.sku = "sku";

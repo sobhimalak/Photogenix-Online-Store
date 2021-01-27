@@ -16,6 +16,7 @@
                 <div id="logo">
                     <h1><a href="#">Photogenix <span>Online Store</span></a></h1>
                 </div>
+
             </div>
 
             @*<ul class=" nav-item col-md-6 col-sm-6 col-xs-6 card-columns container-fluid" style="list-style:none;">
@@ -24,6 +25,22 @@
         </div>
 
     </div>
+    @using Microsoft.AspNet.Identity
+    @if (Request.IsAuthenticated)
+    {
+        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+        {
+            @Html.AntiForgeryToken()
+
+
+            <ul class="nav navbar-nav align-content-end mr-2">
+                <li>
+                        @Html.ActionLink("Welcome " + User.Identity.GetUserName() + "! ", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </ul>
+        }
+    }
+   
+ 
 
 
     <!--LOGO Ends-->
@@ -37,14 +54,13 @@
             <ul class="navbar-nav" style="text-transform:uppercase">
                 <li class="nav-item active p-2" aria-current="page">@Html.ActionLink("Home", "Index", "Home")</li>
                 @*<li class="nav-item p-2">@Html.ActionLink("Product Admin", "Index", "ProductManager")</li>
-        <li class="nav-item p-2">@Html.ActionLink("Category Admin", "Index", "ProductCategoryManager")</li>*@
+                    <li class="nav-item p-2">@Html.ActionLink("Category Admin", "Index", "ProductCategoryManager")</li>*@
                 @*<li class="nav-item p-2">@Html.ActionLink("Shopping Cart", "Index", "ShoppingCart")</li>*@
-            <li class="nav-item p-2">@Html.ActionLink("Admin", "Index", "Admin")</li>
+                <li class="nav-item p-2">@Html.ActionLink("Admin", "Index", "Admin")</li>
                 <li class="nav-item p-2">@Html.ActionLink("About", "About", "Home")</li>
                 <li class="nav-item p-2">@Html.ActionLink("Contact", "Contact", "Home")</li>
-                @Html.Partial("_LoginPartial")
-                @*<li class="nav-item p-2">  @{ Html.RenderAction("ShoppingCartSummary", "ShoppingCart"); }  </li>*@
-                @*<li class="nav-item p-2">@Html.ActionLink("Shopping Cart", "Index", "ShoppingCart")</li>*@
+                <li class="nav-item align-content-end">@Html.Partial("_LoginPartial")</li>
+               
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Cart
@@ -66,9 +82,9 @@
         </footer>
     </div>
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
     </div>
 </body>
 </html>

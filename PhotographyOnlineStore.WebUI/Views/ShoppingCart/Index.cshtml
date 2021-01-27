@@ -44,22 +44,26 @@
             <td>
                 <a href="@Url.Action("RemoveFromShoppingCart", "ShoppingCart", new { Id=item.Id })" class="btn btn-default">Delete</a>
             </td>
+            <td>
+
+            </td>
         </tr>
     }
-    <tr>
-        <td colspan="4" style="text-align:right"><strong>Basket Total</strong></td>
-        <td>@String.Format("{0:c}", (from p in Model select p.Price * p.Quantity).Sum())</td>
-    </tr>
-
+<tr>
+    <td colspan="4" style="text-align:right"><strong>Basket Total</strong></td>
+    <td>@String.Format("{0:c}", (from p in Model select p.Price * p.Quantity).Sum())</td>
+    <td> <a href="@Url.Action("Index", "Checkout")" class="btn btn-default">Checkout</a></td>
+<td>
+    <div class="col-md-12 badge">
+        <button class="btn btn-default">
+            @Html.ActionLink("Continue Shopping", "Index", "Home")
+        </button>
+    </div>
+</td>
+</tr>
 </table>
-<div class="col-md-12 badge">
-    <button class="btn btn-default" style="border-radius:10px">
-        @Html.ActionLink("Continue Shopping", "Index", "Home")
-    </button>
-    <a href="" class="btn btn-default" style="border-radius:10px">Add To Basket</a>
 
-</div>
 
-<div class="col-md-12">
-     <a href="@Url.Action("Index", "Checkout")">Checkout</a>
-</div>
+@*<div class="col-md-12">
+    <a href="@Url.Action("Index", "Checkout")" class="btn btn-default" style="border-radius:10px">Checkout</a>
+</div>*@
