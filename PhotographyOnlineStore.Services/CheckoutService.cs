@@ -50,9 +50,10 @@ namespace PhotographyOnlineStore.Services
             return shoppingCart;
         }
 
+     /*
         public void AddBillingInfoToShoppingCart(HttpContextBase httpContext, _OrderInfo orderInfo)  // Add item to ShoppingCart
         {
-            /*
+            
             //  update shopping cart
             ShoppingCart shoppingCart = GetShoppingCart(httpContext, true);
             
@@ -60,10 +61,11 @@ namespace PhotographyOnlineStore.Services
             shoppingCart.CustomerEmail = orderInfo.CustomerEmail;
             shoppingCart.CustomerTelephone = orderInfo.CustomerTelephone;
             shoppingCart.BillingAddress = orderInfo.BillingAddress;        
-            */
+            
             System.Diagnostics.Debug.WriteLine("Adding name to database ... ");
             shoppingCartContext.Commit();
         }
+    */
         public List<CheckoutViewModel> GetShoppingCartItems(HttpContextBase httpContext)
         {
             ShoppingCart shoppingCart = GetShoppingCart(httpContext, false);

@@ -60,8 +60,6 @@
     <Compile Include="Models\IOrderService.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderItem.cs" />
-    <Compile Include="Models\_Checkout.cs" />
-    <Compile Include="Models\_OrderInfo.cs" />
     <Compile Include="Models\PaypalConfiguration.cs" />
     <Compile Include="Models\PaypalLogger.cs" />
     <Compile Include="Models\Contact.cs" />

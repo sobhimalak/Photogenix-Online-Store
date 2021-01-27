@@ -9,6 +9,10 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.jpg
+*.png
+imgs/
+Migrations/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -87,10 +91,10 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
-imgs/
+
 # Chutzpah Test files
 _Chutzpah*
-Migrations/
+
 # Visual C++ cache files
 ipch/
 *.aps

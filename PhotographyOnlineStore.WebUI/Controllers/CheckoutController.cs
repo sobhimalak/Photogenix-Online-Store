@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using PayPal.Api;
 using PhotographyOnlineStore.Core.Models;
 using MvcApplication1.Models;
-using Microsoft.Extensions.Logging;
+
 using PhotographyOnlineStore.Models;
 
 namespace PhotographyOnlineStore.WebUI.Controllers
@@ -29,10 +29,6 @@ namespace PhotographyOnlineStore.WebUI.Controllers
         public ActionResult Index()
         {
             var model = checkoutService.GetShoppingCartItems(this.HttpContext);
-            ViewBag.Message = "You have reached the checkout out prosess, please procced by filling in your information";
-            _Checkout customer = new _Checkout();
-            customer.CustomerName = "Anna";
-            ViewBag.Checkout = customer;
 
             return View(model);
         }
@@ -40,18 +36,6 @@ namespace PhotographyOnlineStore.WebUI.Controllers
 
         public ActionResult ProcessOrder(FormCollection frc)
         {
-            _OrderInfo orderInfo = new _OrderInfo();
-            orderInfo.CustomerName = frc["cusName"];
-            orderInfo.CustomerTelephone = frc["cusPhone"];
-            orderInfo.CustomerEmail = frc["cusEmail"];
-            orderInfo.BillingAddress = frc["cusAddress"];
-//            string OrderDate = DateTime.Now;
-//                PaymentType = "Cash",
-//                Status = "Processing"
-            
-            System.Diagnostics.Debug.WriteLine("Writing Billing info to DB");
-
-            checkoutService.AddBillingInfoToShoppingCart(this.HttpContext, orderInfo);
             return View("SuccessView");
         }
 
