@@ -59,9 +59,9 @@
     <Compile Include="Artist.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="Genre.cs" />
-    <Compile Include="Migrations\202101271315103_Initial.cs" />
-    <Compile Include="Migrations\202101271315103_Initial.Designer.cs">
-      <DependentUpon>202101271315103_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202101271331476_FinalDBModel.cs" />
+    <Compile Include="Migrations\202101271331476_FinalDBModel.Designer.cs">
+      <DependentUpon>202101271331476_FinalDBModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,8 +78,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101271315103_Initial.resx">
-      <DependentUpon>202101271315103_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101271331476_FinalDBModel.resx">
+      <DependentUpon>202101271331476_FinalDBModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
