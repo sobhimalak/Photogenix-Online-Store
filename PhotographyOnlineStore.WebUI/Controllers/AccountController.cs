@@ -9,8 +9,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using PhotographyOnlineStore.Core.Contracts;
+using PhotographyOnlineStore.Core.Models;
 using PhotographyOnlineStore.WebUI.Models;
-using PhotoographyOnlineStore.Core.Models;
+
 
 namespace PhotographyOnlineStore.WebUI.Controllers
 {
