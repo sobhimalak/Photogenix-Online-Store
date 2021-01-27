@@ -15,3 +15,4 @@ $(".hide-search").click(function () {
     $(".navbar").addClass("d-flex slideDown");
     $("#search").addClass("d-none");
 });
+
