@@ -390,6 +390,8 @@
     <Content Include="Views\Checkout\FailureView.cshtml" />
     <Content Include="Views\Checkout\SuccessView.cshtml" />
     <Content Include="Views\Checkout\partialViewTest.cshtml" />
+    <Content Include="Views\ShoppingCart\ThankYou.cshtml" />
+    <Content Include="Views\ShoppingCart\CheckOut.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -57,6 +57,9 @@
     <Compile Include="Contracts\IRepository.cs" />
     <Compile Include="Contracts\IShoppingCartService.cs" />
     <Compile Include="Models\BaseEntity.cs" />
+    <Compile Include="Models\IOrderService.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderItem.cs" />
     <Compile Include="Models\_Checkout.cs" />
     <Compile Include="Models\_OrderInfo.cs" />
     <Compile Include="Models\PaypalConfiguration.cs" />
