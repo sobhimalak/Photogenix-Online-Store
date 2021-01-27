@@ -9,6 +9,7 @@ using PhotographyOnlineStore.Core.Models;
 using MvcApplication1.Models;
 using Microsoft.Extensions.Logging;
 using PhotographyOnlineStore.Models;
+using Microsoft.AspNet.Identity;
 
 namespace PhotographyOnlineStore.WebUI.Controllers
 {
@@ -31,8 +32,10 @@ namespace PhotographyOnlineStore.WebUI.Controllers
             var model = checkoutService.GetShoppingCartItems(this.HttpContext);
             ViewBag.Message = "You have reached the checkout out prosess, please procced by filling in your information";
             _Checkout customer = new _Checkout();
-            customer.CustomerName = "Anna";
-            ViewBag.Checkout = customer;
+            //customer.CustomerName = "Anna"
+            //@Html.ActionLink("Welcome " + User.Identity.GetUserName() + "! ", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+
+            ViewBag.Checkout = User.Identity.GetUserName();
 
             return View(model);
         }
@@ -333,7 +336,11 @@ namespace PhotographyOnlineStore.WebUI.Controllers
             return this.payment.Create(apiContext);
 
         }
-
+        public ActionResult PaymentBank(FormCollection frc)
+        {
+            
+            return View("SuccessView");
+        }
 
         public ActionResult SuccessView()
         {

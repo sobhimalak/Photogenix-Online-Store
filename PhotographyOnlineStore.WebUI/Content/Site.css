@@ -5,7 +5,7 @@ body {
     color:#fff;
 }
 
-body, section, html {
+body, section, html{
     padding-top: 50px;
     padding-bottom: 20px;
     font-family: 'Poppins', sans-serif;
@@ -204,3 +204,4 @@ a:focus {
         margin-bottom: 10px;
     }
 }
+
