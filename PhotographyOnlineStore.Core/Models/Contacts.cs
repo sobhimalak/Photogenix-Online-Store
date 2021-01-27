@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace PhotoographyOnlineStore.Core.Models
+namespace PhotographyOnlineStore.Core.Models
 {
-    public class Contact
+    public class Contacts : BaseEntity
     {
         [Required, Display(Name = "Sender Name")]
         public string SenderName { get; set; }

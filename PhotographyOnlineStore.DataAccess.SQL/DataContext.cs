@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 using PhotographyOnlineStore.Core.Models;
-//using PhotoographyOnlineStore.Core.Models;
+
 
 namespace PhotographyOnlineStore.DataAccess.SQL
 {
@@ -18,5 +18,6 @@ namespace PhotographyOnlineStore.DataAccess.SQL
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<Contacts> Contacts { get; set; }
     }
 }

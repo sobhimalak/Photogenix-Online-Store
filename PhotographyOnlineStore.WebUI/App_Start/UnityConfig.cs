@@ -2,7 +2,8 @@ using PhotographyOnlineStore.Core.Contracts;
 using PhotographyOnlineStore.Core.Models;
 using PhotographyOnlineStore.DataAccess.SQL;
 using PhotographyOnlineStore.Services;
-using PhotoographyOnlineStore.Core.Models;
+
+
 using System;
 
 using Unity;
@@ -56,6 +57,8 @@ namespace PhotographyOnlineStore.WebUI
             container.RegisterType<ICheckoutService, CheckoutService>();
             container.RegisterType<IRepository<Order>, SqlRepository<Order>>();
             container.RegisterType<IOrderService, OrderService>();
+            container.RegisterType<IRepository<Contacts>, SqlRepository<Contacts>>();
+
         }
     }
 }
