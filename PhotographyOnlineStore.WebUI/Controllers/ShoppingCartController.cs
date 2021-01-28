@@ -9,6 +9,7 @@ using PayPal.Api;
 using MvcApplication1.Models;
 using PhotographyOnlineStore.Models;
 using Order = PhotographyOnlineStore.Core.Models.Order;
+using Microsoft.AspNet.Identity;
 
 namespace PhotographyOnlineStore.WebUI.Controllers
 {
@@ -16,12 +17,13 @@ namespace PhotographyOnlineStore.WebUI.Controllers
     {
         IShoppingCartService shoppingCartService;
         IOrderService orderService;
+        IRepository<Customer> allCustomersContext;
 
-
-        public ShoppingCartController(IShoppingCartService ShoppingCartService, IOrderService OrderService)
+        public ShoppingCartController(IShoppingCartService ShoppingCartService, IOrderService OrderService, IRepository<Customer> customerContext)
         {
             this.shoppingCartService = ShoppingCartService;
             this.orderService = OrderService;
+            this.allCustomersContext = customerContext;
         }
         // GET: ShoppingCart2
         public ActionResult Index()
@@ -62,7 +64,24 @@ namespace PhotographyOnlineStore.WebUI.Controllers
         }
         public ActionResult Checkout()
         {
-            return View();
+       
+
+            List<Customer> customers = allCustomersContext.Collection().ToList();
+            var userName = User.Identity.GetUserName();
+            var currentUser = customers.FirstOrDefault(c => c.Email == userName);
+
+            System.Diagnostics.Debug.WriteLine("userName: " + userName);
+            System.Diagnostics.Debug.WriteLine("currentUser.Email: " + currentUser.Email);
+
+            Order order = new Order();
+            order.FirstName = currentUser.FirstName;
+            order.Surname = currentUser.LastName;
+            order.State = currentUser.State;
+            order.City = currentUser.City;
+            order.State = currentUser.State;
+            order.ZipCode = currentUser.ZipCode;
+
+            return View(order);
         }
         [HttpPost]
         public ActionResult Checkout(Order order)
@@ -81,14 +100,25 @@ namespace PhotographyOnlineStore.WebUI.Controllers
             return RedirectToAction("Thankyou", new { OrderId = order.Id });
         }
 
+        public void CloseOrder(Order order)
+        {
+            var basketItems = shoppingCartService.GetShoppingCartItems(this.HttpContext);
+            order.OrderStatus = "Order Created";
+
+            order.OrderStatus = "Payment Processed";
+            orderService.CreateOrder(order, basketItems);
+            //clear the basket
+            shoppingCartService.ClearShoppingCart(this.HttpContext);
+        }
 
 
         //  Handle Payment below:
 
 
-        public ActionResult PaymentWithCreditCard(FormCollection frc = null)
+        public ActionResult PaymentWithCreditCard(Order order)
         {
 
+            CloseOrder(order);
 
             //create and item for which you are taking payment
             //if you need to add more items in the list
@@ -207,8 +237,11 @@ namespace PhotographyOnlineStore.WebUI.Controllers
         }
 
 
-        public ActionResult PaymentWithPaypal(FormCollection frc = null)
+        public ActionResult PaymentWithPaypal(Order order)
         {
+
+            CloseOrder(order);
+
             //getting the apiContext as earlier
             APIContext apiContext = PaypalConfiguration.GetAPIContext();
 
@@ -364,11 +397,20 @@ namespace PhotographyOnlineStore.WebUI.Controllers
 
         }
 
-        public ActionResult SuccessView()
+
+        public ActionResult PaymentWithBank(Order order)
+        {
+            CloseOrder(order);
+
+            return View("SuccessView");
+
+        }
+
+
+            public ActionResult SuccessView()
         {
             return View("SuccessView");
         }
-
 
 
         //create view (partial view) for the thank you page. Template: Empty

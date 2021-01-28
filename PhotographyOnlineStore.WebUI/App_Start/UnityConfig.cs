@@ -2,7 +2,8 @@ using PhotographyOnlineStore.Core.Contracts;
 using PhotographyOnlineStore.Core.Models;
 using PhotographyOnlineStore.DataAccess.SQL;
 using PhotographyOnlineStore.Services;
-using PhotoographyOnlineStore.Core.Models;
+using PhotographyOnlineStore.Core.Models;
+
 using System;
 
 using Unity;

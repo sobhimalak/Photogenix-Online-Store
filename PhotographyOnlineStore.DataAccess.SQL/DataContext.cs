@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 using PhotographyOnlineStore.Core.Models;
-//using PhotoographyOnlineStore.Core.Models;
+
 
 namespace PhotographyOnlineStore.DataAccess.SQL
 {

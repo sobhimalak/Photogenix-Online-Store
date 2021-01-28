@@ -67,8 +67,15 @@
             </div>
         </div>
 
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Proceed To Payment" class="btn btn-default" />
+            </div>
+        </div>
+    </div>}
+
     </div>
-}
+
 
 
 
@@ -120,7 +127,7 @@
                     <!-- pay later info -->
                     <div id="pay-later" class="tab-pane fade show active pt-3">
                         <div class="form-group">
-                            <p> <input type="submit" value=" Proceed Order " class="btn btn-primary " onclick="location.href='@Url.Action("SuccessView", "Checkout")'" /> </p>
+                            <p> <input type="submit" value=" Proceed Order " class="btn btn-primary " onclick="location.href='@Url.Action("SuccessView", "ShoppingCart")'" /> </p>
                         </div>
                         <p class="text-muted">Note: After completing the payment process, your order will be prepared. </p>
                     </div> <!-- End -->
@@ -195,7 +202,7 @@
 </div>
 @*</div>*@
 
-
+}
 
 
 
