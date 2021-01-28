@@ -68,7 +68,7 @@ namespace PhotographyOnlineStore.WebUI.Controllers
             List<Customer> customers = allCustomersContext.Collection().ToList();
             var userName = User.Identity.GetUserName();
             var currentUser = customers.FirstOrDefault(c => c.Email == userName);
-
+            ViewBag.Message = currentUser.FirstName +" " + currentUser.LastName;
             //           System.Diagnostics.Debug.WriteLine("userName: " + userName);
 
             if (userName.Length > 0)
