@@ -70,36 +70,37 @@ namespace LexShop.WebUI.Controllers
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
 
-            return View();
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Contact(Contact model)
-        {
-            //if (ModelState.IsValid)
-            //{
-            //    var mail = new MailMessage();
-            //    mail.To.Add(new MailAddress(model.SenderEmail));
-            //    mail.Subject = "Your Email Subject";
-            //    mail.Body = string.Format("<p>Email From: {0} ({1})</p><p>Message:</p><p>{2}</p>", model.SenderName, mail.SenderEmail, model.Message);
-            //    mail.IsBodyHtml = true;
-            //    using (var smtp = new SmtpClient())
-            //    {
-            //        await smtp.SendMailAsync(mail);
-            //        return RedirectToAction("SuccessMessage");
-            //    }
-            //}
-            return View("SuccessMessage");
-        }
+        //public ActionResult Contact()
+        //{
+        //    ViewBag.Message = "Your contact page.";
 
-        public ActionResult SuccessMessage()
-        {
-            return View();
-        }
+        //    return View();
+        //}
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<ActionResult> Contact(Contacts model)
+        //{
+        //    //if (ModelState.IsValid)
+        //    //{
+        //    //    var mail = new MailMessage();
+        //    //    mail.To.Add(new MailAddress(model.SenderEmail));
+        //    //    mail.Subject = "Your Email Subject";
+        //    //    mail.Body = string.Format("<p>Email From: {0} ({1})</p><p>Message:</p><p>{2}</p>", model.SenderName, mail.SenderEmail, model.Message);
+        //    //    mail.IsBodyHtml = true;
+        //    //    using (var smtp = new SmtpClient())
+        //    //    {
+        //    //        await smtp.SendMailAsync(mail);
+        //    //        return RedirectToAction("SuccessMessage");
+        //    //    }
+        //    //}
+        //    return View("SuccessMessage");
+        //}
+
+        //public ActionResult SuccessMessage()
+        //{
+        //    return View();
+        //}
 
         
     }

@@ -57,6 +57,8 @@ namespace PhotographyOnlineStore.WebUI
             container.RegisterType<ICheckoutService, CheckoutService>();
             container.RegisterType<IRepository<Order>, SqlRepository<Order>>();
             container.RegisterType<IOrderService, OrderService>();
+            container.RegisterType<IRepository<Contacts>, SqlRepository<Contacts>>();
+
         }
     }
 }
