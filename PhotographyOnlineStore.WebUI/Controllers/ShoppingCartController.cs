@@ -69,7 +69,7 @@ namespace PhotographyOnlineStore.WebUI.Controllers
             var userName = User.Identity.GetUserName();
             var currentUser = customers.FirstOrDefault(c => c.Email == userName);
 
-            //           System.Diagnostics.Debug.WriteLine("userName: " + userName);
+            System.Diagnostics.Debug.WriteLine("userName: " + userName);
 
             if (userName.Length > 0)
             {
