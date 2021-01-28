@@ -8,6 +8,7 @@
 <hr />
 <table class="table">
     <tr>
+
         <th></th>
         <th>
             @Html.DisplayNameFor(model => model.ProductName)
@@ -22,17 +23,21 @@
             Total
         </th>
         <th></th>
+        <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
-            <td><img style="height:50px" class="img" src="~/Content/ProductImages/@item.Image" /></td>
+            <td>
+            <img style="height:50px" class="img" src="~/Content/ProductImages/@item.Image" /></td>
             <td>
                 @Html.DisplayFor(modelItem => item.ProductName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Quantity)
+                <a href="@Url.Action("AddQuantity", "ShoppingCart" , new { Id=item.Id })" class="btn btn-default">+</a>
+                <a href="@Url.Action("ReduceQuantity", "ShoppingCart" , new { Id=item.Id })" class="btn btn-default">-</a>
             </td>
 
             <td>
@@ -42,7 +47,8 @@
                 @String.Format("{0:c}", item.Price * item.Quantity)
             </td>
             <td>
-                <a href="@Url.Action("RemoveFromShoppingCart", "ShoppingCart", new { Id=item.Id })" class="btn btn-default">Delete</a>
+                <a href="@Url.Action(" RemoveFromShoppingCart", "ShoppingCart" , new { Id=item.Id })" class="btn btn-default">Delete</a>
+
             </td>
             <td>
 

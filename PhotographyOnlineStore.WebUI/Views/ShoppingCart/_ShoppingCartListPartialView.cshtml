@@ -27,23 +27,24 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td><img style="height:50px" class="img" src="~/Content/ProductImages/@item.Image" /></td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
+<tr>
+    <td><img style="height:50px" class="img" src="~/Content/ProductImages/@item.Image" /></td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ProductName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Quantity)
+    </td>
 
-            <td>
-                @String.Format("{0:c}", item.Price)
-            </td>
-            <td>
-                @String.Format("{0:c}", item.Price * item.Quantity)
+    <td>
+        @String.Format("{0:c}", item.Price)
+    </td>
+    <td>
+        @String.Format("{0:c}", item.Price * item.Quantity)
 
-            </td>
-        </tr>
+    </td>
+    <th></th>
+</tr>
     }
     <tr>
         <td colspan="4" style="text-align:right"><strong>Basket Total</strong></td>

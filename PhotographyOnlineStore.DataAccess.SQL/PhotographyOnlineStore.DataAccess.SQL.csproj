@@ -60,9 +60,9 @@
     <Compile Include="Artist.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="Genre.cs" />
-    <Compile Include="Migrations\202101281006142_Sobhi.cs" />
-    <Compile Include="Migrations\202101281006142_Sobhi.designer.cs">
-      <DependentUpon>202101281006142_Sobhi.cs</DependentUpon>
+    <Compile Include="Migrations\202101281410293_FinalVersionDB.cs" />
+    <Compile Include="Migrations\202101281410293_FinalVersionDB.designer.cs">
+      <DependentUpon>202101281410293_FinalVersionDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,8 +79,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101281006142_Sobhi.resx">
-      <DependentUpon>202101281006142_Sobhi.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101281410293_FinalVersionDB.resx">
+      <DependentUpon>202101281410293_FinalVersionDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

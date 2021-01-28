@@ -95,6 +95,29 @@ namespace PhotographyOnlineStore.Services
             shoppingCartContext.Commit();
         }
 
+        public void AddOneItem(HttpContextBase httpContext, string itemId)
+        {
+            ShoppingCart shoppingCart = GetShoppingCart(httpContext, true);
+            ShoppingCartItem item = shoppingCart.ShoppingCartItems.FirstOrDefault(i => i.Id == itemId);
+
+            if (item != null)
+            {
+                item.Quantity++;
+                shoppingCartContext.Commit();
+            }
+        }
+
+        public void ReduceOneItem(HttpContextBase httpContext, string itemId)
+        {
+            ShoppingCart shoppingCart = GetShoppingCart(httpContext, true);
+            ShoppingCartItem item = shoppingCart.ShoppingCartItems.FirstOrDefault(i => i.Id == itemId);
+
+            if (item != null)
+            {              
+                item.Quantity = ((item.Quantity > 0) ? --item.Quantity : item.Quantity);
+                shoppingCartContext.Commit();
+            }
+        }
         public void RemoveFromShoppingCart(HttpContextBase httpContext, string itemId)
         {
             ShoppingCart shoppingCart = GetShoppingCart(httpContext, true);
