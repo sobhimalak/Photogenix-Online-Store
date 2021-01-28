@@ -60,6 +60,11 @@
     <Compile Include="Artist.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="Genre.cs" />
+    <Compile Include="Migrations\202101281006142_Sobhi.cs" />
+    <Compile Include="Migrations\202101281006142_Sobhi.designer.cs">
+      <DependentUpon>202101281006142_Sobhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlRepository.cs" />
   </ItemGroup>
@@ -72,6 +77,11 @@
       <Project>{ed78890f-388c-4160-9177-f57ca0c3823e}</Project>
       <Name>PhotographyOnlineStore.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202101281006142_Sobhi.resx">
+      <DependentUpon>202101281006142_Sobhi.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

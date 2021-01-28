@@ -1,6 +1,7 @@
 ﻿@model PhotographyOnlineStore.Core.Models.Order
-
+<h2 style="color:#5b087f">Dear @ViewBag.Message</h2>
 @{ Html.RenderAction("_ShoppingCartListPartialView", "ShoppingCart"); }
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
