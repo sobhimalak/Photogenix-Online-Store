@@ -1,0 +1,50 @@
+﻿@model PhotographyOnlineStore.Core.ViewModels.ContactsViewModel
+
+@{
+    ViewBag.Title = "Create Contacts";
+}
+
+<h2>Create Contacts</h2>
+
+
+@*@using (Html.BeginForm())*@
+
+@using (Html.BeginForm("Create", "Contacts", FormMethod.Post, new { encType = "multipart/form-data" }))
+{
+@Html.AntiForgeryToken()
+    <h4>Please Do Not Hesitate to</h4>
+    <h4>Contact us for any Inquiry</h4>
+<hr />
+    <div class="form-group">
+        @Html.LabelFor(m => m.Contacts.SenderName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Contacts.SenderName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Contacts.SenderName)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Contacts.SenderEmail, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Contacts.SenderEmail, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Contacts.SenderEmail)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Contacts.Message, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(m => m.Contacts.Message, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Contacts.Message)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Send" />
+        </div>
+    </div>
+    }
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

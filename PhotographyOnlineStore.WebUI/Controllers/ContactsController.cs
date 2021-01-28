@@ -18,10 +18,8 @@ namespace PhotographyOnlineStore.WebUI.Controllers
         public ContactsController(IRepository<Contacts> ContactsContext)
         {
             context = ContactsContext;
-            
         }
 
-       
 
         // GET: Contact
         public ActionResult Index()
@@ -36,25 +34,26 @@ namespace PhotographyOnlineStore.WebUI.Controllers
             ContactsViewModel viewModel = new ContactsViewModel();
 
             viewModel.Contacts = new Contacts();
-           
 
             return View(viewModel);
         }
         [HttpPost]
-        public ActionResult Create(Contacts Contact)
+        public ActionResult Create(ContactsViewModel model)
         {
+            Contacts contact = new Contacts();
+            contact = model.Contacts;
             if (!ModelState.IsValid)
             {
-                
-                return View(Contact);
+
+                return View(contact);
             }
             else
             {
-                
-                context.Insert(Contact);
+
+                context.Insert(contact);
                 context.Commit();
-                
-                return RedirectToAction("Index");
+
+                return RedirectToAction("Index", "Home");
             }
         }
 
