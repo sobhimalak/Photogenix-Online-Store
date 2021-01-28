@@ -65,23 +65,28 @@ namespace PhotographyOnlineStore.WebUI.Controllers
         public ActionResult Checkout()
         {
        
-
             List<Customer> customers = allCustomersContext.Collection().ToList();
             var userName = User.Identity.GetUserName();
             var currentUser = customers.FirstOrDefault(c => c.Email == userName);
 
-            System.Diagnostics.Debug.WriteLine("userName: " + userName);
-            System.Diagnostics.Debug.WriteLine("currentUser.Email: " + currentUser.Email);
+            //           System.Diagnostics.Debug.WriteLine("userName: " + userName);
 
-            Order order = new Order();
-            order.FirstName = currentUser.FirstName;
-            order.Surname = currentUser.LastName;
-            order.State = currentUser.State;
-            order.City = currentUser.City;
-            order.State = currentUser.State;
-            order.ZipCode = currentUser.ZipCode;
-
-            return View(order);
+            if (userName.Length > 0)
+            {
+                Order order = new Order();
+                order.FirstName = currentUser.FirstName == null ? null : currentUser.FirstName;
+                order.Surname = currentUser.LastName == null ? null : currentUser.LastName;
+                order.Email = currentUser.Email == null ? null : currentUser.Email;
+                order.Street = currentUser.Street == null ? null : currentUser.Street;
+                order.City = currentUser.City == null ? null : currentUser.City;
+                order.State = currentUser.State == null ? null : currentUser.State;
+                order.ZipCode = currentUser.ZipCode == null ? null : currentUser.ZipCode;
+                return View(order);
+            }
+            else
+            {
+                return View();
+            }
         }
         [HttpPost]
         public ActionResult Checkout(Order order)

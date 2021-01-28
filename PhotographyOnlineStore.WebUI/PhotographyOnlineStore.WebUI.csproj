@@ -387,7 +387,6 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Home\SuccessMessage.cshtml" />
     <Content Include="Views\Shared\_ShoppingCartItemPartial.cshtml" />
-    <Content Include="Views\Checkout\Index.cshtml" />
     <Content Include="Views\ShoppingCart\FailureView.cshtml" />
     <Content Include="Views\ShoppingCart\SuccessView.cshtml" />
     <Content Include="Views\ShoppingCart\ThankYou.cshtml" />
