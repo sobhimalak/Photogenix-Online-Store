@@ -30,9 +30,12 @@
             </dd>
 
             <dd>
-                <a href="@Url.Action("AddToShoppingcart","ShoppingCart", new { Id=Model.Id})" class="btn btn-default">Add To Shopping Cart</a>
+                <button class="btn btn-default">
+                    @Html.ActionLink("Continue Shopping", "Index", "Home")
+                </button>
+             
             </dd>
-
+           
         </dl>
     </div>
 </div>

@@ -7,6 +7,8 @@ namespace PhotographyOnlineStore.Core.Contracts
 {
     public interface IShoppingCartService
     {
+        void AddOneItem(HttpContextBase httpContext, string itemId);
+        void ReduceOneItem(HttpContextBase httpContext, string itemId);
         void AddToShoppingCart(HttpContextBase httpContext, string productId);
         void RemoveFromShoppingCart(HttpContextBase httpContext, string itemId);
         List<ShoppingCartItemViewModel> GetShoppingCartItems(HttpContextBase httpContext);

@@ -40,7 +40,19 @@ namespace PhotographyOnlineStore.WebUI.Controllers
             return RedirectToAction("Index");
            
         }
-       
+        public ActionResult AddQuantity(string Id)
+        {
+            shoppingCartService.AddOneItem(this.HttpContext, Id);
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult ReduceQuantity(string Id)
+        {
+            shoppingCartService.ReduceOneItem(this.HttpContext, Id);
+
+            return RedirectToAction("Index");
+        }
         public ActionResult RemoveFromShoppingCart(string Id)
         {
             shoppingCartService.RemoveFromShoppingCart(this.HttpContext, Id);
@@ -68,11 +80,12 @@ namespace PhotographyOnlineStore.WebUI.Controllers
             List<Customer> customers = allCustomersContext.Collection().ToList();
             var userName = User.Identity.GetUserName();
             var currentUser = customers.FirstOrDefault(c => c.Email == userName);
-            ViewBag.Message = currentUser.FirstName +" " + currentUser.LastName;
+            
             //           System.Diagnostics.Debug.WriteLine("userName: " + userName);
 
             if (userName.Length > 0)
             {
+                ViewBag.Message = currentUser.FirstName + " " + currentUser.LastName;
                 Order order = new Order();
                 order.FirstName = currentUser.FirstName == null ? null : currentUser.FirstName;
                 order.Surname = currentUser.LastName == null ? null : currentUser.LastName;
@@ -85,6 +98,7 @@ namespace PhotographyOnlineStore.WebUI.Controllers
             }
             else
             {
+                ViewBag.Message = "Customer";
                 return View();
             }
         }
