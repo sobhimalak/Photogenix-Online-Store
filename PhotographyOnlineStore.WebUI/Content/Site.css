@@ -67,6 +67,7 @@ a:focus {
     transition: color 0.5s;
     text-decoration: none;
     color: #fff !important;
+    
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -126,8 +127,7 @@ a:focus {
         background-color: #b200ff;
         border-color: #280438;
     }
-
-
+    
 
 
 #footer {

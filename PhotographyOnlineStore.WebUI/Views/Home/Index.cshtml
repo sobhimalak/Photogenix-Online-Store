@@ -23,13 +23,13 @@
             @Html.ActionLink("All", "Index", null, new { @class = Request["Category"] == null ? "list-group-item active" : "list-group-item", name = "Cat" })
             @foreach (var cat in Model.ProductCategories)
             {
-                @Html.ActionLink(cat.Category, "Index", new { searchType = "Catagory", searchValue = cat.Category, }, new { @class = Request["Category"] == cat.Category ? "list-group-item active" : "list-group-item", name = "Cat" })
+                @Html.ActionLink(cat.Category, "Index", new { searchType = "Catagory", searchValue = cat.Category, }, new { @class = Request["Category"] == cat.Category ? "list-group-item " : "list-group-item", name = "Cat" })
             }
         </ul>
 
         <form class="form-inline" method="get" action="@Url.Action("Index", "Home")">
             <div class="md-form my-1">
-                <input class="form-control mr-sm-2" type="text" name="searchValue" placeholder="Product Name" />
+                <input class="form-control mr-sm-2" type="text" name="searchValue" placeholder="Search Product Name" />
                 <input type="hidden" name="searchType" value="Product" />
                 @*<button type="submit">Search</button>*@
             </div>
@@ -40,7 +40,7 @@
 </nav>
 <!--/.Navbar-->
 
-
+<h1>Products</h1>
 
 <div class="container col-md-12">
 
