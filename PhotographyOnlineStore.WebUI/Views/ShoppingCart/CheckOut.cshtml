@@ -5,8 +5,9 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    <h2>Order</h2>
-    <hr />
+    
+    
+<h1 class="display-5" style="text-align:center;">Your Information</h1>
     <div class="jumbotron bg-dark form-row">
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -68,7 +69,7 @@
         </div>
 
         <div class="form-group">
-            <h6>Payment</h6>
+            <h6 >Payment</h6>
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Send me a Bill" class="btn btn-default" />
             </div>
@@ -76,10 +77,9 @@
     </div>
 }
 
-
+<h1 class="display-5" style="text-align:center;">Payment Method</h1>
 <div class="jumbotron bg-dark col-xs-6">
-    <h1 class="display-5" style="text-align:center;">Or Choose your payment method</h1>
-
+    
     <div class="card-header">
         <div class="bg-secondary shadow-sm pt-4 pl-2 pr-2 pb-2">
             <!-- Credit card form tabs -->
@@ -95,11 +95,11 @@
         <div class="tab-content">
             <!-- pay later info -->
             @*<div id="pay-later" class="tab-pane fade show active pt-3">
-                <div class="form-group">
-                    <p> <input type="submit" value=" Proceed Order " class="btn btn-primary " onclick="location.href='@Url.Action("SuccessView", "Checkout")'" /> </p>
-                </div>
-                <p class="text-muted">Note: After completing the payment process, your order will be prepared. </p>
-            </div>*@ <!-- End -->
+                    <div class="form-group">
+                        <p> <input type="submit" value=" Proceed Order " class="btn btn-primary " onclick="location.href='@Url.Action("SuccessView", "Checkout")'" /> </p>
+                    </div>
+                    <p class="text-muted">Note: After completing the payment process, your order will be prepared. </p>
+                </div>*@ <!-- End -->
             <!-- credit card info-->
             <div id="credit-card" class="tab-pane fade pt-3">
                 <form role="form">
@@ -168,5 +168,9 @@
         <!-- End -->
     </div>
 </div>
-<div class="btn btn-default float-md-right mt-5">@Html.ActionLink("Back to ShoppingCart", "Index")</div>
+<div class="float-right mt-4">
+    <button class="btn btn-default">
+        @Html.ActionLink("Continue Shopping", "Index", "Home")
+    </button>
+</div>
 

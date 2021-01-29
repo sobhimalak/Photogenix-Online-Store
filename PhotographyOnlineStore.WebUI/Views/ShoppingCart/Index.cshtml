@@ -18,11 +18,15 @@
         <th>
             @Html.DisplayNameFor(model => model.Price)
         </th>
+
         <th>
             Total
         </th>
+        <th>
+         Add | Reduce
+        </th>
         <th></th>
-        <th></th>
+       
     </tr>
 
     @foreach (var item in Model)
@@ -39,19 +43,18 @@
             <td>
                 @String.Format("{0:c}", item.Price)
             </td>
+
             <td>
                 @String.Format("{0:c}", item.Price * item.Quantity)
             <td>
-                <a href="@Url.Action("AddQuantity", "ShoppingCart" , new { Id=item.Id })" class="btn btn-default"><i class="fas fa-cart-plus"></i></a>
-                <a href="@Url.Action("ReduceQuantity", "ShoppingCart" , new { Id=item.Id })" class="btn btn-default"><i class="far fa-trash-alt"></i></a>
+                <a href="@Url.Action("AddQuantity", "ShoppingCart" , new { Id=item.Id })" class="btn btn-default">+</a>
+                <a href="@Url.Action("ReduceQuantity", "ShoppingCart" , new { Id=item.Id })" class="btn btn-default">-</a>
             </td>
                 </td>
             <td>
                 <a href="@Url.Action("RemoveFromShoppingCart", "ShoppingCart", new { Id=item.Id })" class="btn btn-default">Remove</a>
             </td>
-            <td>
-
-            </td>
+           
         </tr>
     }
 <tr>

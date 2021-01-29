@@ -74,6 +74,7 @@ namespace PhotographyOnlineStore.WebUI.Controllers
 
             return PartialView(shoppingCartItemList);
         }
+        [Authorize]
         public ActionResult Checkout()
         {
        
@@ -103,11 +104,12 @@ namespace PhotographyOnlineStore.WebUI.Controllers
             }
         }
         [HttpPost]
+        [Authorize]
         public ActionResult Checkout(Order order)
         {
             var basketItems = shoppingCartService.GetShoppingCartItems(this.HttpContext);
             order.OrderStatus = "Order Created";
-
+            order.Email = User.Identity.Name;
             //TODO: process payment...
 
             order.OrderStatus = "Payment Processed";
